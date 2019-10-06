@@ -2466,6 +2466,7 @@ public enum POGOProtos_Enums_PokemonId: SwiftProtobuf.Enum {
     case .meltan: return 808
     case .melmetal: return 809
     case .UNRECOGNIZED(let i): return i
+    default: fatalError()
     }
   }
 
