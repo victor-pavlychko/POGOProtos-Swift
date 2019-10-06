@@ -23,159 +23,127 @@ public enum POGOProtos_Networking_Platform_PlatformRequestType: SwiftProtobuf.En
   public typealias RawValue = Int
 
   /// No implementation required
-  case unknownPlatformClientAction // = 0
-
-  /// Implemented
-  case registerPushNotification // = 5000
+  case unknown // = 0
 
   /// ???
-  case unregisterPushNotification // = 5001
+  case mapQueryRequest // = 1
 
   /// Implemented
-  case updateNotificationStatus // = 5002
+  case purchaseSku // = 2
 
   /// Implemented
-  case optOutPushNotificationCategory // = 5003
-
-  /// Implemented
-  case downloadGameMasterTemplates // = 5004
-
-  /// Implemented
-  case getInventory // = 5005
-
-  /// Implemented
-  case redeemPasscode // = 5006
-
-  /// Implemented
-  case ping // = 5007
-
-  /// Implemented
-  case addLoginAction // = 5008
-
-  /// Implemented
-  case removeLoginAction // = 5009
-
-  /// Implemented
-  case listLoginAction // = 5010
-
-  /// Implemented
-  case addNewPoi // = 5011
-
-  /// Implemented
-  case proxySocialAction // = 5012
+  case redeemGoogleReceipt // = 3
 
   /// ???
-  case clientTelemetry // = 5013
+  case redeemAppleReceipt // = 4
 
   /// Implemented
-  case getAvailableSubmissions // = 5014
+  case getAvailableSkusAndBalances // = 5
+
+  /// Implemented
+  case sendEncryptedSignature // = 6
 
   /// ???
-  case getSignedURLForPhotoUpload // = 5015
+  case redeemDesktopReceipt // = 7
 
   /// Implemented
-  case replaceLoginAction // = 5016
+  case downloadPlatformClientSettings // = 8
 
   /// Implemented
-  case proxySocialSideChannelAction // = 5017
+  case redeemPasscode // = 9
+
+  /// Implemented
+  case registerPushNotification // = 10
 
   /// ???
-  case collectClientTelemetry // = 5018
+  case unregisterPushNotification // = 11
 
   /// Implemented
-  case purchaseSku // = 5019
+  case updateNotificationStatus // = 12
 
   /// Implemented
-  case getAvailableSkusAndBalances // = 5020
+  case addNewPoi // = 13
 
   /// Implemented
-  case redeemGoogleReceipt // = 5021
+  case addLoginAction // = 14
+
+  /// Implemented
+  case removeLoginAction // = 15
+
+  /// Implemented
+  case listLoginAction // = 16
 
   /// ???
-  case redeemAppleReceipt // = 5022
+  case collectClientTelemetry // = 17
 
   /// ???
-  case redeemDesktopReceipt // = 5023
+  case getSignedURLForPhotoUpload // = 18
 
   /// Implemented
-  case updateFitnessMetrics // = 5024
-
-  /// Implemented
-  case getFitnessReport // = 5025
-
-  /// Implemented
-  case getClientTelemetrySettings // = 5026
+  case replaceLoginAction // = 19
 
   /// ???
-  case pingAsync // = 5027
+  case challenge // = 20
 
   /// ???
-  case registerBackgroundService // = 5028
+  case safetyNetChallenge // = 21
 
   /// Implemented
-  case getClientBgmodeSettings // = 5029
+  case updateFitnessMetrics // = 22
+
+  /// Implemented
+  case getFitnessReport // = 23
+
+  /// Implemented
+  case setInGameCurrencyExchangeRate // = 24
+
+  /// Implemented
+  case registerDownstreamServerActions // = 30
 
   /// ???
-  case pingDownstream // = 5030
+  case downstreamServerActions // = 31
 
-  /// Implemented
-  case setInGameCurrencyExchangeRate // = 5032
-
-  /// Implemented
-  case requestGeofenceUpdates // = 5033
-
-  /// Implemented
-  case updatePlayerLocation // = 5034
-
-  /// Implemented
-  case generateGmapSignedURL // = 5035
+  /// ???
+  case tempTestResult // = 101
 
   /// Implemented
   case getGmapSettings // = 5036
   case UNRECOGNIZED(Int)
 
   public init() {
-    self = .unknownPlatformClientAction
+    self = .unknown
   }
 
   public init?(rawValue: Int) {
     switch rawValue {
-    case 0: self = .unknownPlatformClientAction
-    case 5000: self = .registerPushNotification
-    case 5001: self = .unregisterPushNotification
-    case 5002: self = .updateNotificationStatus
-    case 5003: self = .optOutPushNotificationCategory
-    case 5004: self = .downloadGameMasterTemplates
-    case 5005: self = .getInventory
-    case 5006: self = .redeemPasscode
-    case 5007: self = .ping
-    case 5008: self = .addLoginAction
-    case 5009: self = .removeLoginAction
-    case 5010: self = .listLoginAction
-    case 5011: self = .addNewPoi
-    case 5012: self = .proxySocialAction
-    case 5013: self = .clientTelemetry
-    case 5014: self = .getAvailableSubmissions
-    case 5015: self = .getSignedURLForPhotoUpload
-    case 5016: self = .replaceLoginAction
-    case 5017: self = .proxySocialSideChannelAction
-    case 5018: self = .collectClientTelemetry
-    case 5019: self = .purchaseSku
-    case 5020: self = .getAvailableSkusAndBalances
-    case 5021: self = .redeemGoogleReceipt
-    case 5022: self = .redeemAppleReceipt
-    case 5023: self = .redeemDesktopReceipt
-    case 5024: self = .updateFitnessMetrics
-    case 5025: self = .getFitnessReport
-    case 5026: self = .getClientTelemetrySettings
-    case 5027: self = .pingAsync
-    case 5028: self = .registerBackgroundService
-    case 5029: self = .getClientBgmodeSettings
-    case 5030: self = .pingDownstream
-    case 5032: self = .setInGameCurrencyExchangeRate
-    case 5033: self = .requestGeofenceUpdates
-    case 5034: self = .updatePlayerLocation
-    case 5035: self = .generateGmapSignedURL
+    case 0: self = .unknown
+    case 1: self = .mapQueryRequest
+    case 2: self = .purchaseSku
+    case 3: self = .redeemGoogleReceipt
+    case 4: self = .redeemAppleReceipt
+    case 5: self = .getAvailableSkusAndBalances
+    case 6: self = .sendEncryptedSignature
+    case 7: self = .redeemDesktopReceipt
+    case 8: self = .downloadPlatformClientSettings
+    case 9: self = .redeemPasscode
+    case 10: self = .registerPushNotification
+    case 11: self = .unregisterPushNotification
+    case 12: self = .updateNotificationStatus
+    case 13: self = .addNewPoi
+    case 14: self = .addLoginAction
+    case 15: self = .removeLoginAction
+    case 16: self = .listLoginAction
+    case 17: self = .collectClientTelemetry
+    case 18: self = .getSignedURLForPhotoUpload
+    case 19: self = .replaceLoginAction
+    case 20: self = .challenge
+    case 21: self = .safetyNetChallenge
+    case 22: self = .updateFitnessMetrics
+    case 23: self = .getFitnessReport
+    case 24: self = .setInGameCurrencyExchangeRate
+    case 30: self = .registerDownstreamServerActions
+    case 31: self = .downstreamServerActions
+    case 101: self = .tempTestResult
     case 5036: self = .getGmapSettings
     default: self = .UNRECOGNIZED(rawValue)
     }
@@ -183,42 +151,34 @@ public enum POGOProtos_Networking_Platform_PlatformRequestType: SwiftProtobuf.En
 
   public var rawValue: Int {
     switch self {
-    case .unknownPlatformClientAction: return 0
-    case .registerPushNotification: return 5000
-    case .unregisterPushNotification: return 5001
-    case .updateNotificationStatus: return 5002
-    case .optOutPushNotificationCategory: return 5003
-    case .downloadGameMasterTemplates: return 5004
-    case .getInventory: return 5005
-    case .redeemPasscode: return 5006
-    case .ping: return 5007
-    case .addLoginAction: return 5008
-    case .removeLoginAction: return 5009
-    case .listLoginAction: return 5010
-    case .addNewPoi: return 5011
-    case .proxySocialAction: return 5012
-    case .clientTelemetry: return 5013
-    case .getAvailableSubmissions: return 5014
-    case .getSignedURLForPhotoUpload: return 5015
-    case .replaceLoginAction: return 5016
-    case .proxySocialSideChannelAction: return 5017
-    case .collectClientTelemetry: return 5018
-    case .purchaseSku: return 5019
-    case .getAvailableSkusAndBalances: return 5020
-    case .redeemGoogleReceipt: return 5021
-    case .redeemAppleReceipt: return 5022
-    case .redeemDesktopReceipt: return 5023
-    case .updateFitnessMetrics: return 5024
-    case .getFitnessReport: return 5025
-    case .getClientTelemetrySettings: return 5026
-    case .pingAsync: return 5027
-    case .registerBackgroundService: return 5028
-    case .getClientBgmodeSettings: return 5029
-    case .pingDownstream: return 5030
-    case .setInGameCurrencyExchangeRate: return 5032
-    case .requestGeofenceUpdates: return 5033
-    case .updatePlayerLocation: return 5034
-    case .generateGmapSignedURL: return 5035
+    case .unknown: return 0
+    case .mapQueryRequest: return 1
+    case .purchaseSku: return 2
+    case .redeemGoogleReceipt: return 3
+    case .redeemAppleReceipt: return 4
+    case .getAvailableSkusAndBalances: return 5
+    case .sendEncryptedSignature: return 6
+    case .redeemDesktopReceipt: return 7
+    case .downloadPlatformClientSettings: return 8
+    case .redeemPasscode: return 9
+    case .registerPushNotification: return 10
+    case .unregisterPushNotification: return 11
+    case .updateNotificationStatus: return 12
+    case .addNewPoi: return 13
+    case .addLoginAction: return 14
+    case .removeLoginAction: return 15
+    case .listLoginAction: return 16
+    case .collectClientTelemetry: return 17
+    case .getSignedURLForPhotoUpload: return 18
+    case .replaceLoginAction: return 19
+    case .challenge: return 20
+    case .safetyNetChallenge: return 21
+    case .updateFitnessMetrics: return 22
+    case .getFitnessReport: return 23
+    case .setInGameCurrencyExchangeRate: return 24
+    case .registerDownstreamServerActions: return 30
+    case .downstreamServerActions: return 31
+    case .tempTestResult: return 101
     case .getGmapSettings: return 5036
     case .UNRECOGNIZED(let i): return i
     }
@@ -231,42 +191,34 @@ public enum POGOProtos_Networking_Platform_PlatformRequestType: SwiftProtobuf.En
 extension POGOProtos_Networking_Platform_PlatformRequestType: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
   public static var allCases: [POGOProtos_Networking_Platform_PlatformRequestType] = [
-    .unknownPlatformClientAction,
+    .unknown,
+    .mapQueryRequest,
+    .purchaseSku,
+    .redeemGoogleReceipt,
+    .redeemAppleReceipt,
+    .getAvailableSkusAndBalances,
+    .sendEncryptedSignature,
+    .redeemDesktopReceipt,
+    .downloadPlatformClientSettings,
+    .redeemPasscode,
     .registerPushNotification,
     .unregisterPushNotification,
     .updateNotificationStatus,
-    .optOutPushNotificationCategory,
-    .downloadGameMasterTemplates,
-    .getInventory,
-    .redeemPasscode,
-    .ping,
+    .addNewPoi,
     .addLoginAction,
     .removeLoginAction,
     .listLoginAction,
-    .addNewPoi,
-    .proxySocialAction,
-    .clientTelemetry,
-    .getAvailableSubmissions,
+    .collectClientTelemetry,
     .getSignedURLForPhotoUpload,
     .replaceLoginAction,
-    .proxySocialSideChannelAction,
-    .collectClientTelemetry,
-    .purchaseSku,
-    .getAvailableSkusAndBalances,
-    .redeemGoogleReceipt,
-    .redeemAppleReceipt,
-    .redeemDesktopReceipt,
+    .challenge,
+    .safetyNetChallenge,
     .updateFitnessMetrics,
     .getFitnessReport,
-    .getClientTelemetrySettings,
-    .pingAsync,
-    .registerBackgroundService,
-    .getClientBgmodeSettings,
-    .pingDownstream,
     .setInGameCurrencyExchangeRate,
-    .requestGeofenceUpdates,
-    .updatePlayerLocation,
-    .generateGmapSignedURL,
+    .registerDownstreamServerActions,
+    .downstreamServerActions,
+    .tempTestResult,
     .getGmapSettings,
   ]
 }
@@ -277,42 +229,34 @@ extension POGOProtos_Networking_Platform_PlatformRequestType: CaseIterable {
 
 extension POGOProtos_Networking_Platform_PlatformRequestType: SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "UNKNOWN_PLATFORM_CLIENT_ACTION"),
-    5000: .same(proto: "REGISTER_PUSH_NOTIFICATION"),
-    5001: .same(proto: "UNREGISTER_PUSH_NOTIFICATION"),
-    5002: .same(proto: "UPDATE_NOTIFICATION_STATUS"),
-    5003: .same(proto: "OPT_OUT_PUSH_NOTIFICATION_CATEGORY"),
-    5004: .same(proto: "DOWNLOAD_GAME_MASTER_TEMPLATES"),
-    5005: .same(proto: "GET_INVENTORY"),
-    5006: .same(proto: "REDEEM_PASSCODE"),
-    5007: .same(proto: "PING"),
-    5008: .same(proto: "ADD_LOGIN_ACTION"),
-    5009: .same(proto: "REMOVE_LOGIN_ACTION"),
-    5010: .same(proto: "LIST_LOGIN_ACTION"),
-    5011: .same(proto: "ADD_NEW_POI"),
-    5012: .same(proto: "PROXY_SOCIAL_ACTION"),
-    5013: .same(proto: "CLIENT_TELEMETRY"),
-    5014: .same(proto: "GET_AVAILABLE_SUBMISSIONS"),
-    5015: .same(proto: "GET_SIGNED_URL_FOR_PHOTO_UPLOAD"),
-    5016: .same(proto: "REPLACE_LOGIN_ACTION"),
-    5017: .same(proto: "PROXY_SOCIAL_SIDE_CHANNEL_ACTION"),
-    5018: .same(proto: "COLLECT_CLIENT_TELEMETRY"),
-    5019: .same(proto: "PURCHASE_SKU"),
-    5020: .same(proto: "GET_AVAILABLE_SKUS_AND_BALANCES"),
-    5021: .same(proto: "REDEEM_GOOGLE_RECEIPT"),
-    5022: .same(proto: "REDEEM_APPLE_RECEIPT"),
-    5023: .same(proto: "REDEEM_DESKTOP_RECEIPT"),
-    5024: .same(proto: "UPDATE_FITNESS_METRICS"),
-    5025: .same(proto: "GET_FITNESS_REPORT"),
-    5026: .same(proto: "GET_CLIENT_TELEMETRY_SETTINGS"),
-    5027: .same(proto: "PING_ASYNC"),
-    5028: .same(proto: "REGISTER_BACKGROUND_SERVICE"),
-    5029: .same(proto: "GET_CLIENT_BGMODE_SETTINGS"),
-    5030: .same(proto: "PING_DOWNSTREAM"),
-    5032: .same(proto: "SET_IN_GAME_CURRENCY_EXCHANGE_RATE"),
-    5033: .same(proto: "REQUEST_GEOFENCE_UPDATES"),
-    5034: .same(proto: "UPDATE_PLAYER_LOCATION"),
-    5035: .same(proto: "GENERATE_GMAP_SIGNED_URL"),
+    0: .same(proto: "UNKNOWN"),
+    1: .same(proto: "MAP_QUERY_REQUEST"),
+    2: .same(proto: "PURCHASE_SKU"),
+    3: .same(proto: "REDEEM_GOOGLE_RECEIPT"),
+    4: .same(proto: "REDEEM_APPLE_RECEIPT"),
+    5: .same(proto: "GET_AVAILABLE_SKUS_AND_BALANCES"),
+    6: .same(proto: "SEND_ENCRYPTED_SIGNATURE"),
+    7: .same(proto: "REDEEM_DESKTOP_RECEIPT"),
+    8: .same(proto: "DOWNLOAD_PLATFORM_CLIENT_SETTINGS"),
+    9: .same(proto: "REDEEM_PASSCODE"),
+    10: .same(proto: "REGISTER_PUSH_NOTIFICATION"),
+    11: .same(proto: "UNREGISTER_PUSH_NOTIFICATION"),
+    12: .same(proto: "UPDATE_NOTIFICATION_STATUS"),
+    13: .same(proto: "ADD_NEW_POI"),
+    14: .same(proto: "ADD_LOGIN_ACTION"),
+    15: .same(proto: "REMOVE_LOGIN_ACTION"),
+    16: .same(proto: "LIST_LOGIN_ACTION"),
+    17: .same(proto: "COLLECT_CLIENT_TELEMETRY"),
+    18: .same(proto: "GET_SIGNED_URL_FOR_PHOTO_UPLOAD"),
+    19: .same(proto: "REPLACE_LOGIN_ACTION"),
+    20: .same(proto: "CHALLENGE"),
+    21: .same(proto: "SAFETY_NET_CHALLENGE"),
+    22: .same(proto: "UPDATE_FITNESS_METRICS"),
+    23: .same(proto: "GET_FITNESS_REPORT"),
+    24: .same(proto: "SET_IN_GAME_CURRENCY_EXCHANGE_RATE"),
+    30: .same(proto: "REGISTER_DOWNSTREAM_SERVER_ACTIONS"),
+    31: .same(proto: "DOWNSTREAM_SERVER_ACTIONS"),
+    101: .same(proto: "TEMP_TEST_RESULT"),
     5036: .same(proto: "GET_GMAP_SETTINGS"),
   ]
 }

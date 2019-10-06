@@ -24,7 +24,6 @@ public enum POGOProtos_Map_MapObjectsStatus: SwiftProtobuf.Enum {
   case unsetStatus // = 0
   case success // = 1
   case locationUnset // = 2
-  case error // = 3
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -36,7 +35,6 @@ public enum POGOProtos_Map_MapObjectsStatus: SwiftProtobuf.Enum {
     case 0: self = .unsetStatus
     case 1: self = .success
     case 2: self = .locationUnset
-    case 3: self = .error
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -46,7 +44,6 @@ public enum POGOProtos_Map_MapObjectsStatus: SwiftProtobuf.Enum {
     case .unsetStatus: return 0
     case .success: return 1
     case .locationUnset: return 2
-    case .error: return 3
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -61,7 +58,6 @@ extension POGOProtos_Map_MapObjectsStatus: CaseIterable {
     .unsetStatus,
     .success,
     .locationUnset,
-    .error,
   ]
 }
 
@@ -74,6 +70,5 @@ extension POGOProtos_Map_MapObjectsStatus: SwiftProtobuf._ProtoNameProviding {
     0: .same(proto: "UNSET_STATUS"),
     1: .same(proto: "SUCCESS"),
     2: .same(proto: "LOCATION_UNSET"),
-    3: .same(proto: "ERROR"),
   ]
 }

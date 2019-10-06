@@ -32,14 +32,6 @@ public struct POGOProtos_Settings_Master_PokemonUpgradeSettings {
 
   public var stardustCost: [Int32] = []
 
-  public var shadowStardustMultiplier: Float = 0
-
-  public var shadowCandyMultiplier: Float = 0
-
-  public var purifiedStardustMultiplier: Float = 0
-
-  public var purifiedCandyMultiplier: Float = 0
-
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -56,10 +48,6 @@ extension POGOProtos_Settings_Master_PokemonUpgradeSettings: SwiftProtobuf.Messa
     2: .standard(proto: "allowed_levels_above_player"),
     3: .standard(proto: "candy_cost"),
     4: .standard(proto: "stardust_cost"),
-    5: .standard(proto: "shadow_stardust_multiplier"),
-    6: .standard(proto: "shadow_candy_multiplier"),
-    7: .standard(proto: "purified_stardust_multiplier"),
-    8: .standard(proto: "purified_candy_multiplier"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -69,10 +57,6 @@ extension POGOProtos_Settings_Master_PokemonUpgradeSettings: SwiftProtobuf.Messa
       case 2: try decoder.decodeSingularInt32Field(value: &self.allowedLevelsAbovePlayer)
       case 3: try decoder.decodeRepeatedInt32Field(value: &self.candyCost)
       case 4: try decoder.decodeRepeatedInt32Field(value: &self.stardustCost)
-      case 5: try decoder.decodeSingularFloatField(value: &self.shadowStardustMultiplier)
-      case 6: try decoder.decodeSingularFloatField(value: &self.shadowCandyMultiplier)
-      case 7: try decoder.decodeSingularFloatField(value: &self.purifiedStardustMultiplier)
-      case 8: try decoder.decodeSingularFloatField(value: &self.purifiedCandyMultiplier)
       default: break
       }
     }
@@ -91,18 +75,6 @@ extension POGOProtos_Settings_Master_PokemonUpgradeSettings: SwiftProtobuf.Messa
     if !self.stardustCost.isEmpty {
       try visitor.visitPackedInt32Field(value: self.stardustCost, fieldNumber: 4)
     }
-    if self.shadowStardustMultiplier != 0 {
-      try visitor.visitSingularFloatField(value: self.shadowStardustMultiplier, fieldNumber: 5)
-    }
-    if self.shadowCandyMultiplier != 0 {
-      try visitor.visitSingularFloatField(value: self.shadowCandyMultiplier, fieldNumber: 6)
-    }
-    if self.purifiedStardustMultiplier != 0 {
-      try visitor.visitSingularFloatField(value: self.purifiedStardustMultiplier, fieldNumber: 7)
-    }
-    if self.purifiedCandyMultiplier != 0 {
-      try visitor.visitSingularFloatField(value: self.purifiedCandyMultiplier, fieldNumber: 8)
-    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -111,10 +83,6 @@ extension POGOProtos_Settings_Master_PokemonUpgradeSettings: SwiftProtobuf.Messa
     if lhs.allowedLevelsAbovePlayer != rhs.allowedLevelsAbovePlayer {return false}
     if lhs.candyCost != rhs.candyCost {return false}
     if lhs.stardustCost != rhs.stardustCost {return false}
-    if lhs.shadowStardustMultiplier != rhs.shadowStardustMultiplier {return false}
-    if lhs.shadowCandyMultiplier != rhs.shadowCandyMultiplier {return false}
-    if lhs.purifiedStardustMultiplier != rhs.purifiedStardustMultiplier {return false}
-    if lhs.purifiedCandyMultiplier != rhs.purifiedCandyMultiplier {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

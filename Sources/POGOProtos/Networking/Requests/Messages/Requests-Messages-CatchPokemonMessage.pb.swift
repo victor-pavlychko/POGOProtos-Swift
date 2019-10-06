@@ -59,8 +59,8 @@ public struct POGOProtos_Networking_Requests_Messages_CatchPokemonMessage {
     set {_uniqueStorage()._normalizedHitPosition = newValue}
   }
 
-  public var arPlusValues: POGOProtos_Networking_Requests_Messages_CatchPokemonMessage.ARPlusEncounterValues {
-    get {return _storage._arPlusValues ?? POGOProtos_Networking_Requests_Messages_CatchPokemonMessage.ARPlusEncounterValues()}
+  public var arPlusValues: POGOProtos_Data_ARPlusEncounterValues {
+    get {return _storage._arPlusValues ?? POGOProtos_Data_ARPlusEncounterValues()}
     set {_uniqueStorage()._arPlusValues = newValue}
   }
   /// Returns true if `arPlusValues` has been explicitly set.
@@ -69,22 +69,6 @@ public struct POGOProtos_Networking_Requests_Messages_CatchPokemonMessage {
   public mutating func clearArPlusValues() {_uniqueStorage()._arPlusValues = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  public struct ARPlusEncounterValues {
-    // SwiftProtobuf.Message conformance is added in an extension below. See the
-    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-    // methods supported on all messages.
-
-    public var proximity: Float = 0
-
-    public var awareness: Float = 0
-
-    public var pokemonFrightened: Bool = false
-
-    public var unknownFields = SwiftProtobuf.UnknownStorage()
-
-    public init() {}
-  }
 
   public init() {}
 
@@ -116,7 +100,7 @@ extension POGOProtos_Networking_Requests_Messages_CatchPokemonMessage: SwiftProt
     var _hitPokemon: Bool = false
     var _spinModifier: Double = 0
     var _normalizedHitPosition: Double = 0
-    var _arPlusValues: POGOProtos_Networking_Requests_Messages_CatchPokemonMessage.ARPlusEncounterValues? = nil
+    var _arPlusValues: POGOProtos_Data_ARPlusEncounterValues? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -207,47 +191,6 @@ extension POGOProtos_Networking_Requests_Messages_CatchPokemonMessage: SwiftProt
       }
       if !storagesAreEqual {return false}
     }
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension POGOProtos_Networking_Requests_Messages_CatchPokemonMessage.ARPlusEncounterValues: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  public static let protoMessageName: String = POGOProtos_Networking_Requests_Messages_CatchPokemonMessage.protoMessageName + ".ARPlusEncounterValues"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "proximity"),
-    2: .same(proto: "awareness"),
-    3: .standard(proto: "pokemon_frightened"),
-  ]
-
-  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1: try decoder.decodeSingularFloatField(value: &self.proximity)
-      case 2: try decoder.decodeSingularFloatField(value: &self.awareness)
-      case 3: try decoder.decodeSingularBoolField(value: &self.pokemonFrightened)
-      default: break
-      }
-    }
-  }
-
-  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.proximity != 0 {
-      try visitor.visitSingularFloatField(value: self.proximity, fieldNumber: 1)
-    }
-    if self.awareness != 0 {
-      try visitor.visitSingularFloatField(value: self.awareness, fieldNumber: 2)
-    }
-    if self.pokemonFrightened != false {
-      try visitor.visitSingularBoolField(value: self.pokemonFrightened, fieldNumber: 3)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  public static func ==(lhs: POGOProtos_Networking_Requests_Messages_CatchPokemonMessage.ARPlusEncounterValues, rhs: POGOProtos_Networking_Requests_Messages_CatchPokemonMessage.ARPlusEncounterValues) -> Bool {
-    if lhs.proximity != rhs.proximity {return false}
-    if lhs.awareness != rhs.awareness {return false}
-    if lhs.pokemonFrightened != rhs.pokemonFrightened {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

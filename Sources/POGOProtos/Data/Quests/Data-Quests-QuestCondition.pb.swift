@@ -202,22 +202,6 @@ public struct POGOProtos_Data_Quests_QuestCondition {
     set {_uniqueStorage()._condition = .withDistance(newValue)}
   }
 
-  public var withInvasionCharacter: POGOProtos_Data_Quests_QuestCondition.WithInvasionCharacter {
-    get {
-      if case .withInvasionCharacter(let v)? = _storage._condition {return v}
-      return POGOProtos_Data_Quests_QuestCondition.WithInvasionCharacter()
-    }
-    set {_uniqueStorage()._condition = .withInvasionCharacter(newValue)}
-  }
-
-  public var withPokemonAlignment: POGOProtos_Data_Quests_QuestCondition.WithPokemonAlignment {
-    get {
-      if case .withPokemonAlignment(let v)? = _storage._condition {return v}
-      return POGOProtos_Data_Quests_QuestCondition.WithPokemonAlignment()
-    }
-    set {_uniqueStorage()._condition = .withPokemonAlignment(newValue)}
-  }
-
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum OneOf_Condition: Equatable {
@@ -242,8 +226,6 @@ public struct POGOProtos_Data_Quests_QuestCondition {
     case withPvpCombat(POGOProtos_Data_Quests_QuestCondition.WithPvpCombat)
     case withLocation(POGOProtos_Data_Quests_QuestCondition.WithLocation)
     case withDistance(POGOProtos_Data_Quests_QuestCondition.WithDistance)
-    case withInvasionCharacter(POGOProtos_Data_Quests_QuestCondition.WithInvasionCharacter)
-    case withPokemonAlignment(POGOProtos_Data_Quests_QuestCondition.WithPokemonAlignment)
 
   #if !swift(>=4.1)
     public static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.OneOf_Condition, rhs: POGOProtos_Data_Quests_QuestCondition.OneOf_Condition) -> Bool {
@@ -269,8 +251,6 @@ public struct POGOProtos_Data_Quests_QuestCondition {
       case (.withPvpCombat(let l), .withPvpCombat(let r)): return l == r
       case (.withLocation(let l), .withLocation(let r)): return l == r
       case (.withDistance(let l), .withDistance(let r)): return l == r
-      case (.withInvasionCharacter(let l), .withInvasionCharacter(let r)): return l == r
-      case (.withPokemonAlignment(let l), .withPokemonAlignment(let r)): return l == r
       default: return false
       }
     }
@@ -305,8 +285,6 @@ public struct POGOProtos_Data_Quests_QuestCondition {
     case withPvpCombat // = 23
     case withLocation // = 24
     case withDistance // = 25
-    case withPokemonAlignment // = 26
-    case withInvasionCharacter // = 27
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -341,8 +319,6 @@ public struct POGOProtos_Data_Quests_QuestCondition {
       case 23: self = .withPvpCombat
       case 24: self = .withLocation
       case 25: self = .withDistance
-      case 26: self = .withPokemonAlignment
-      case 27: self = .withInvasionCharacter
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -375,36 +351,10 @@ public struct POGOProtos_Data_Quests_QuestCondition {
       case .withPvpCombat: return 23
       case .withLocation: return 24
       case .withDistance: return 25
-      case .withPokemonAlignment: return 26
-      case .withInvasionCharacter: return 27
       case .UNRECOGNIZED(let i): return i
       }
     }
 
-  }
-
-  public struct WithPokemonAlignment {
-    // SwiftProtobuf.Message conformance is added in an extension below. See the
-    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-    // methods supported on all messages.
-
-    public var alignment: [POGOProtos_Data_PokemonDisplay.Alignment] = []
-
-    public var unknownFields = SwiftProtobuf.UnknownStorage()
-
-    public init() {}
-  }
-
-  public struct WithInvasionCharacter {
-    // SwiftProtobuf.Message conformance is added in an extension below. See the
-    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-    // methods supported on all messages.
-
-    public var category: [POGOProtos_Data_EnumWrapper.CharacterCategory] = []
-
-    public var unknownFields = SwiftProtobuf.UnknownStorage()
-
-    public init() {}
   }
 
   public struct WithUniquePokemon {
@@ -759,8 +709,6 @@ extension POGOProtos_Data_Quests_QuestCondition.ConditionType: CaseIterable {
     .withPvpCombat,
     .withLocation,
     .withDistance,
-    .withPokemonAlignment,
-    .withInvasionCharacter,
   ]
 }
 
@@ -795,8 +743,6 @@ extension POGOProtos_Data_Quests_QuestCondition: SwiftProtobuf.Message, SwiftPro
     20: .standard(proto: "with_pvp_combat"),
     21: .standard(proto: "with_location"),
     22: .standard(proto: "with_distance"),
-    23: .standard(proto: "with_invasion_character"),
-    24: .standard(proto: "with_pokemon_alignment"),
   ]
 
   fileprivate class _StorageClass {
@@ -994,22 +940,6 @@ extension POGOProtos_Data_Quests_QuestCondition: SwiftProtobuf.Message, SwiftPro
           }
           try decoder.decodeSingularMessageField(value: &v)
           if let v = v {_storage._condition = .withDistance(v)}
-        case 23:
-          var v: POGOProtos_Data_Quests_QuestCondition.WithInvasionCharacter?
-          if let current = _storage._condition {
-            try decoder.handleConflictingOneOf()
-            if case .withInvasionCharacter(let m) = current {v = m}
-          }
-          try decoder.decodeSingularMessageField(value: &v)
-          if let v = v {_storage._condition = .withInvasionCharacter(v)}
-        case 24:
-          var v: POGOProtos_Data_Quests_QuestCondition.WithPokemonAlignment?
-          if let current = _storage._condition {
-            try decoder.handleConflictingOneOf()
-            if case .withPokemonAlignment(let m) = current {v = m}
-          }
-          try decoder.decodeSingularMessageField(value: &v)
-          if let v = v {_storage._condition = .withPokemonAlignment(v)}
         default: break
         }
       }
@@ -1064,10 +994,6 @@ extension POGOProtos_Data_Quests_QuestCondition: SwiftProtobuf.Message, SwiftPro
         try visitor.visitSingularMessageField(value: v, fieldNumber: 21)
       case .withDistance(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 22)
-      case .withInvasionCharacter(let v)?:
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 23)
-      case .withPokemonAlignment(let v)?:
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 24)
       case nil: break
       }
     }
@@ -1118,67 +1044,7 @@ extension POGOProtos_Data_Quests_QuestCondition.ConditionType: SwiftProtobuf._Pr
     23: .same(proto: "WITH_PVP_COMBAT"),
     24: .same(proto: "WITH_LOCATION"),
     25: .same(proto: "WITH_DISTANCE"),
-    26: .same(proto: "WITH_POKEMON_ALIGNMENT"),
-    27: .same(proto: "WITH_INVASION_CHARACTER"),
   ]
-}
-
-extension POGOProtos_Data_Quests_QuestCondition.WithPokemonAlignment: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  public static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithPokemonAlignment"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "alignment"),
-  ]
-
-  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1: try decoder.decodeRepeatedEnumField(value: &self.alignment)
-      default: break
-      }
-    }
-  }
-
-  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.alignment.isEmpty {
-      try visitor.visitPackedEnumField(value: self.alignment, fieldNumber: 1)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  public static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithPokemonAlignment, rhs: POGOProtos_Data_Quests_QuestCondition.WithPokemonAlignment) -> Bool {
-    if lhs.alignment != rhs.alignment {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension POGOProtos_Data_Quests_QuestCondition.WithInvasionCharacter: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  public static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithInvasionCharacter"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "category"),
-  ]
-
-  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1: try decoder.decodeRepeatedEnumField(value: &self.category)
-      default: break
-      }
-    }
-  }
-
-  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.category.isEmpty {
-      try visitor.visitPackedEnumField(value: self.category, fieldNumber: 1)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  public static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithInvasionCharacter, rhs: POGOProtos_Data_Quests_QuestCondition.WithInvasionCharacter) -> Bool {
-    if lhs.category != rhs.category {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
 }
 
 extension POGOProtos_Data_Quests_QuestCondition.WithUniquePokemon: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {

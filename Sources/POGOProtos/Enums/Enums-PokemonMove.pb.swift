@@ -284,7 +284,11 @@ public enum POGOProtos_Enums_PokemonMove: SwiftProtobuf.Enum {
   case frustration // = 322
   case `return` // = 323
   case synchronoise // = 324
-  case lockOnFast // = 325
+  case lockOn // = 325
+  case thunderFang // = 326
+  case iceFang // = 327
+  case hornDrill // = 328
+  case fissure // = 329
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -556,7 +560,11 @@ public enum POGOProtos_Enums_PokemonMove: SwiftProtobuf.Enum {
     case 322: self = .frustration
     case 323: self = .return
     case 324: self = .synchronoise
-    case 325: self = .lockOnFast
+    case 325: self = .lockOn
+    case 326: self = .thunderFang
+    case 327: self = .iceFang
+    case 328: self = .hornDrill
+    case 329: self = .fissure
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -826,7 +834,11 @@ public enum POGOProtos_Enums_PokemonMove: SwiftProtobuf.Enum {
     case .frustration: return 322
     case .return: return 323
     case .synchronoise: return 324
-    case .lockOnFast: return 325
+    case .lockOn: return 325
+    case .thunderFang: return 326
+    case .iceFang: return 327
+    case .hornDrill: return 328
+    case .fissure: return 329
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -1101,7 +1113,11 @@ extension POGOProtos_Enums_PokemonMove: CaseIterable {
     .frustration,
     .return,
     .synchronoise,
-    .lockOnFast,
+    .lockOn,
+    .thunderFang,
+    .iceFang,
+    .hornDrill,
+    .fissure,
   ]
 }
 
@@ -1374,6 +1390,10 @@ extension POGOProtos_Enums_PokemonMove: SwiftProtobuf._ProtoNameProviding {
     322: .same(proto: "FRUSTRATION"),
     323: .same(proto: "RETURN"),
     324: .same(proto: "SYNCHRONOISE"),
-    325: .same(proto: "LOCK_ON_FAST"),
+    325: .same(proto: "LOCK_ON"),
+    326: .same(proto: "THUNDER_FANG"),
+    327: .same(proto: "ICE_FANG"),
+    328: .same(proto: "HORN_DRILL"),
+    329: .same(proto: "FISSURE"),
   ]
 }

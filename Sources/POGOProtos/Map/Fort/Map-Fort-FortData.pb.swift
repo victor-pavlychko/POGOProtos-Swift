@@ -196,15 +196,6 @@ public struct POGOProtos_Map_Fort_FortData {
     set {_uniqueStorage()._isExRaidEligible = newValue}
   }
 
-  public var pokestopDisplay: POGOProtos_Data_PokestopIncidentDisplay {
-    get {return _storage._pokestopDisplay ?? POGOProtos_Data_PokestopIncidentDisplay()}
-    set {_uniqueStorage()._pokestopDisplay = newValue}
-  }
-  /// Returns true if `pokestopDisplay` has been explicitly set.
-  public var hasPokestopDisplay: Bool {return _storage._pokestopDisplay != nil}
-  /// Clears the value of `pokestopDisplay`. Subsequent reads from it will return its default value.
-  public mutating func clearPokestopDisplay() {_uniqueStorage()._pokestopDisplay = nil}
-
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -249,7 +240,6 @@ extension POGOProtos_Map_Fort_FortData: SwiftProtobuf.Message, SwiftProtobuf._Me
     28: .standard(proto: "partner_id"),
     30: .standard(proto: "challenge_quest_completed"),
     31: .standard(proto: "is_ex_raid_eligible"),
-    32: .standard(proto: "pokestop_display"),
   ]
 
   fileprivate class _StorageClass {
@@ -283,7 +273,6 @@ extension POGOProtos_Map_Fort_FortData: SwiftProtobuf.Message, SwiftProtobuf._Me
     var _partnerID: String = String()
     var _challengeQuestCompleted: Bool = false
     var _isExRaidEligible: Bool = false
-    var _pokestopDisplay: POGOProtos_Data_PokestopIncidentDisplay? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -320,7 +309,6 @@ extension POGOProtos_Map_Fort_FortData: SwiftProtobuf.Message, SwiftProtobuf._Me
       _partnerID = source._partnerID
       _challengeQuestCompleted = source._challengeQuestCompleted
       _isExRaidEligible = source._isExRaidEligible
-      _pokestopDisplay = source._pokestopDisplay
     }
   }
 
@@ -366,7 +354,6 @@ extension POGOProtos_Map_Fort_FortData: SwiftProtobuf.Message, SwiftProtobuf._Me
         case 28: try decoder.decodeSingularStringField(value: &_storage._partnerID)
         case 30: try decoder.decodeSingularBoolField(value: &_storage._challengeQuestCompleted)
         case 31: try decoder.decodeSingularBoolField(value: &_storage._isExRaidEligible)
-        case 32: try decoder.decodeSingularMessageField(value: &_storage._pokestopDisplay)
         default: break
         }
       }
@@ -465,9 +452,6 @@ extension POGOProtos_Map_Fort_FortData: SwiftProtobuf.Message, SwiftProtobuf._Me
       if _storage._isExRaidEligible != false {
         try visitor.visitSingularBoolField(value: _storage._isExRaidEligible, fieldNumber: 31)
       }
-      if let v = _storage._pokestopDisplay {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 32)
-      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -507,7 +491,6 @@ extension POGOProtos_Map_Fort_FortData: SwiftProtobuf.Message, SwiftProtobuf._Me
         if _storage._partnerID != rhs_storage._partnerID {return false}
         if _storage._challengeQuestCompleted != rhs_storage._challengeQuestCompleted {return false}
         if _storage._isExRaidEligible != rhs_storage._isExRaidEligible {return false}
-        if _storage._pokestopDisplay != rhs_storage._pokestopDisplay {return false}
         return true
       }
       if !storagesAreEqual {return false}

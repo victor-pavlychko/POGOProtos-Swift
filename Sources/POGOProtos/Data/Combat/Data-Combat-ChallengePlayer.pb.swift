@@ -48,15 +48,6 @@ public struct POGOProtos_Data_Combat_ChallengePlayer {
     set {_uniqueStorage()._attackingPokemonID = newValue}
   }
 
-  public var publicProfile: POGOProtos_Data_Player_PlayerPublicProfile {
-    get {return _storage._publicProfile ?? POGOProtos_Data_Player_PlayerPublicProfile()}
-    set {_uniqueStorage()._publicProfile = newValue}
-  }
-  /// Returns true if `publicProfile` has been explicitly set.
-  public var hasPublicProfile: Bool {return _storage._publicProfile != nil}
-  /// Clears the value of `publicProfile`. Subsequent reads from it will return its default value.
-  public mutating func clearPublicProfile() {_uniqueStorage()._publicProfile = nil}
-
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -75,7 +66,6 @@ extension POGOProtos_Data_Combat_ChallengePlayer: SwiftProtobuf.Message, SwiftPr
     2: .standard(proto: "player_avatar"),
     3: .standard(proto: "combat_player_s2_cell_id"),
     4: .standard(proto: "attacking_pokemon_id"),
-    5: .standard(proto: "public_profile"),
   ]
 
   fileprivate class _StorageClass {
@@ -83,7 +73,6 @@ extension POGOProtos_Data_Combat_ChallengePlayer: SwiftProtobuf.Message, SwiftPr
     var _playerAvatar: POGOProtos_Data_Player_PlayerAvatar? = nil
     var _combatPlayerS2CellID: Int64 = 0
     var _attackingPokemonID: [UInt64] = []
-    var _publicProfile: POGOProtos_Data_Player_PlayerPublicProfile? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -94,7 +83,6 @@ extension POGOProtos_Data_Combat_ChallengePlayer: SwiftProtobuf.Message, SwiftPr
       _playerAvatar = source._playerAvatar
       _combatPlayerS2CellID = source._combatPlayerS2CellID
       _attackingPokemonID = source._attackingPokemonID
-      _publicProfile = source._publicProfile
     }
   }
 
@@ -114,7 +102,6 @@ extension POGOProtos_Data_Combat_ChallengePlayer: SwiftProtobuf.Message, SwiftPr
         case 2: try decoder.decodeSingularMessageField(value: &_storage._playerAvatar)
         case 3: try decoder.decodeSingularInt64Field(value: &_storage._combatPlayerS2CellID)
         case 4: try decoder.decodeRepeatedFixed64Field(value: &_storage._attackingPokemonID)
-        case 5: try decoder.decodeSingularMessageField(value: &_storage._publicProfile)
         default: break
         }
       }
@@ -135,9 +122,6 @@ extension POGOProtos_Data_Combat_ChallengePlayer: SwiftProtobuf.Message, SwiftPr
       if !_storage._attackingPokemonID.isEmpty {
         try visitor.visitPackedFixed64Field(value: _storage._attackingPokemonID, fieldNumber: 4)
       }
-      if let v = _storage._publicProfile {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -151,7 +135,6 @@ extension POGOProtos_Data_Combat_ChallengePlayer: SwiftProtobuf.Message, SwiftPr
         if _storage._playerAvatar != rhs_storage._playerAvatar {return false}
         if _storage._combatPlayerS2CellID != rhs_storage._combatPlayerS2CellID {return false}
         if _storage._attackingPokemonID != rhs_storage._attackingPokemonID {return false}
-        if _storage._publicProfile != rhs_storage._publicProfile {return false}
         return true
       }
       if !storagesAreEqual {return false}

@@ -150,7 +150,7 @@ public struct POGOProtos_Networking_Envelopes_RequestEnvelope {
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    public var type: POGOProtos_Networking_Platform_PlatformRequestType = .unknownPlatformClientAction
+    public var type: POGOProtos_Networking_Platform_PlatformRequestType = .unknown
 
     public var requestMessage: Data = SwiftProtobuf.Internal.emptyData
 
@@ -460,7 +460,7 @@ extension POGOProtos_Networking_Envelopes_RequestEnvelope.PlatformRequest: Swift
   }
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.type != .unknownPlatformClientAction {
+    if self.type != .unknown {
       try visitor.visitSingularEnumField(value: self.type, fieldNumber: 1)
     }
     if !self.requestMessage.isEmpty {

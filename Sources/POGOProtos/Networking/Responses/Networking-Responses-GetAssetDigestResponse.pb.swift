@@ -24,7 +24,7 @@ public struct POGOProtos_Networking_Responses_GetAssetDigestResponse {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  public var digest: [POGOProtos_Networking_Responses_GetAssetDigestResponse.AssetDigestEntry] = []
+  public var digest: [POGOProtos_Data_AssetDigestEntry] = []
 
   public var timestampMs: UInt64 = 0
 
@@ -66,28 +66,6 @@ public struct POGOProtos_Networking_Responses_GetAssetDigestResponse {
       }
     }
 
-  }
-
-  public struct AssetDigestEntry {
-    // SwiftProtobuf.Message conformance is added in an extension below. See the
-    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-    // methods supported on all messages.
-
-    public var assetID: String = String()
-
-    public var bundleName: String = String()
-
-    public var version: Int64 = 0
-
-    public var checksum: UInt32 = 0
-
-    public var size: Int32 = 0
-
-    public var key: Data = SwiftProtobuf.Internal.emptyData
-
-    public var unknownFields = SwiftProtobuf.UnknownStorage()
-
-    public init() {}
   }
 
   public init() {}
@@ -165,63 +143,4 @@ extension POGOProtos_Networking_Responses_GetAssetDigestResponse.Result: SwiftPr
     2: .same(proto: "PAGE"),
     3: .same(proto: "RETRY"),
   ]
-}
-
-extension POGOProtos_Networking_Responses_GetAssetDigestResponse.AssetDigestEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  public static let protoMessageName: String = POGOProtos_Networking_Responses_GetAssetDigestResponse.protoMessageName + ".AssetDigestEntry"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "asset_id"),
-    2: .standard(proto: "bundle_name"),
-    3: .same(proto: "version"),
-    4: .same(proto: "checksum"),
-    5: .same(proto: "size"),
-    6: .same(proto: "key"),
-  ]
-
-  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1: try decoder.decodeSingularStringField(value: &self.assetID)
-      case 2: try decoder.decodeSingularStringField(value: &self.bundleName)
-      case 3: try decoder.decodeSingularInt64Field(value: &self.version)
-      case 4: try decoder.decodeSingularFixed32Field(value: &self.checksum)
-      case 5: try decoder.decodeSingularInt32Field(value: &self.size)
-      case 6: try decoder.decodeSingularBytesField(value: &self.key)
-      default: break
-      }
-    }
-  }
-
-  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.assetID.isEmpty {
-      try visitor.visitSingularStringField(value: self.assetID, fieldNumber: 1)
-    }
-    if !self.bundleName.isEmpty {
-      try visitor.visitSingularStringField(value: self.bundleName, fieldNumber: 2)
-    }
-    if self.version != 0 {
-      try visitor.visitSingularInt64Field(value: self.version, fieldNumber: 3)
-    }
-    if self.checksum != 0 {
-      try visitor.visitSingularFixed32Field(value: self.checksum, fieldNumber: 4)
-    }
-    if self.size != 0 {
-      try visitor.visitSingularInt32Field(value: self.size, fieldNumber: 5)
-    }
-    if !self.key.isEmpty {
-      try visitor.visitSingularBytesField(value: self.key, fieldNumber: 6)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  public static func ==(lhs: POGOProtos_Networking_Responses_GetAssetDigestResponse.AssetDigestEntry, rhs: POGOProtos_Networking_Responses_GetAssetDigestResponse.AssetDigestEntry) -> Bool {
-    if lhs.assetID != rhs.assetID {return false}
-    if lhs.bundleName != rhs.bundleName {return false}
-    if lhs.version != rhs.version {return false}
-    if lhs.checksum != rhs.checksum {return false}
-    if lhs.size != rhs.size {return false}
-    if lhs.key != rhs.key {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
 }

@@ -52,10 +52,6 @@ public struct POGOProtos_Data_Avatar_AvatarCustomization {
 
   public var unlockPlayerLevel: Int32 = 0
 
-  public var setName: String = String()
-
-  public var setPrimeItem: Bool = false
-
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum AvatarCustomizationPromoType: SwiftProtobuf.Enum {
@@ -262,8 +258,6 @@ extension POGOProtos_Data_Avatar_AvatarCustomization: SwiftProtobuf.Message, Swi
     12: .standard(proto: "unlock_badge_level"),
     13: .standard(proto: "icon_name"),
     14: .standard(proto: "unlock_player_level"),
-    15: .standard(proto: "set_name"),
-    16: .standard(proto: "set_prime_item"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -283,8 +277,6 @@ extension POGOProtos_Data_Avatar_AvatarCustomization: SwiftProtobuf.Message, Swi
       case 12: try decoder.decodeSingularInt32Field(value: &self.unlockBadgeLevel)
       case 13: try decoder.decodeSingularStringField(value: &self.iconName)
       case 14: try decoder.decodeSingularInt32Field(value: &self.unlockPlayerLevel)
-      case 15: try decoder.decodeSingularStringField(value: &self.setName)
-      case 16: try decoder.decodeSingularBoolField(value: &self.setPrimeItem)
       default: break
       }
     }
@@ -333,12 +325,6 @@ extension POGOProtos_Data_Avatar_AvatarCustomization: SwiftProtobuf.Message, Swi
     if self.unlockPlayerLevel != 0 {
       try visitor.visitSingularInt32Field(value: self.unlockPlayerLevel, fieldNumber: 14)
     }
-    if !self.setName.isEmpty {
-      try visitor.visitSingularStringField(value: self.setName, fieldNumber: 15)
-    }
-    if self.setPrimeItem != false {
-      try visitor.visitSingularBoolField(value: self.setPrimeItem, fieldNumber: 16)
-    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -357,8 +343,6 @@ extension POGOProtos_Data_Avatar_AvatarCustomization: SwiftProtobuf.Message, Swi
     if lhs.unlockBadgeLevel != rhs.unlockBadgeLevel {return false}
     if lhs.iconName != rhs.iconName {return false}
     if lhs.unlockPlayerLevel != rhs.unlockPlayerLevel {return false}
-    if lhs.setName != rhs.setName {return false}
-    if lhs.setPrimeItem != rhs.setPrimeItem {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

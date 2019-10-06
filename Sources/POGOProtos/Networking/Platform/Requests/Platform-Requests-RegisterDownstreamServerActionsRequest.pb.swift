@@ -19,7 +19,6 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-///TODO: this ref maybe this PING_DOWNSTREAM = 5030;
 public struct POGOProtos_Networking_Platform_Requests_RegisterDownstreamServerActionsRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for

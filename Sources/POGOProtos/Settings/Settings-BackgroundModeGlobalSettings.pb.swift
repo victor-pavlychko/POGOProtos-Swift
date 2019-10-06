@@ -26,8 +26,6 @@ public struct POGOProtos_Settings_BackgroundModeGlobalSettings {
 
   public var minPlayerLevelFitness: UInt32 = 0
 
-  public var servicePromptTimestampMs: Int64 = 0
-
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -41,14 +39,12 @@ extension POGOProtos_Settings_BackgroundModeGlobalSettings: SwiftProtobuf.Messag
   public static let protoMessageName: String = _protobuf_package + ".BackgroundModeGlobalSettings"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "min_player_level_fitness"),
-    2: .standard(proto: "service_prompt_timestamp_ms"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularUInt32Field(value: &self.minPlayerLevelFitness)
-      case 2: try decoder.decodeSingularInt64Field(value: &self.servicePromptTimestampMs)
       default: break
       }
     }
@@ -58,15 +54,11 @@ extension POGOProtos_Settings_BackgroundModeGlobalSettings: SwiftProtobuf.Messag
     if self.minPlayerLevelFitness != 0 {
       try visitor.visitSingularUInt32Field(value: self.minPlayerLevelFitness, fieldNumber: 1)
     }
-    if self.servicePromptTimestampMs != 0 {
-      try visitor.visitSingularInt64Field(value: self.servicePromptTimestampMs, fieldNumber: 2)
-    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Settings_BackgroundModeGlobalSettings, rhs: POGOProtos_Settings_BackgroundModeGlobalSettings) -> Bool {
     if lhs.minPlayerLevelFitness != rhs.minPlayerLevelFitness {return false}
-    if lhs.servicePromptTimestampMs != rhs.servicePromptTimestampMs {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

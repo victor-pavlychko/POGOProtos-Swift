@@ -58,7 +58,7 @@ public struct POGOProtos_Settings_Master_CombatNpcTrainer {
   /// Clears the value of `avatar`. Subsequent reads from it will return its default value.
   public mutating func clearAvatar() {_uniqueStorage()._avatar = nil}
 
-  public var availablePokemon: [POGOProtos_Settings_Master_CombatNpcTrainer.NpcPokemon] {
+  public var availablePokemon: [POGOProtos_Data_NpcPokemon] {
     get {return _storage._availablePokemon}
     set {_uniqueStorage()._availablePokemon = newValue}
   }
@@ -84,32 +84,6 @@ public struct POGOProtos_Settings_Master_CombatNpcTrainer {
   }
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  public struct NpcPokemon {
-    // SwiftProtobuf.Message conformance is added in an extension below. See the
-    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-    // methods supported on all messages.
-
-    public var pokemonType: POGOProtos_Enums_PokemonId {
-      get {return _storage._pokemonType}
-      set {_uniqueStorage()._pokemonType = newValue}
-    }
-
-    public var pokemonDisplay: POGOProtos_Data_PokemonDisplay {
-      get {return _storage._pokemonDisplay ?? POGOProtos_Data_PokemonDisplay()}
-      set {_uniqueStorage()._pokemonDisplay = newValue}
-    }
-    /// Returns true if `pokemonDisplay` has been explicitly set.
-    public var hasPokemonDisplay: Bool {return _storage._pokemonDisplay != nil}
-    /// Clears the value of `pokemonDisplay`. Subsequent reads from it will return its default value.
-    public mutating func clearPokemonDisplay() {_uniqueStorage()._pokemonDisplay = nil}
-
-    public var unknownFields = SwiftProtobuf.UnknownStorage()
-
-    public init() {}
-
-    fileprivate var _storage = _StorageClass.defaultInstance
-  }
 
   public init() {}
 
@@ -143,7 +117,7 @@ extension POGOProtos_Settings_Master_CombatNpcTrainer: SwiftProtobuf.Message, Sw
     var _winLootTableID: String = String()
     var _loseLootTableID: String = String()
     var _avatar: POGOProtos_Data_Player_PlayerAvatar? = nil
-    var _availablePokemon: [POGOProtos_Settings_Master_CombatNpcTrainer.NpcPokemon] = []
+    var _availablePokemon: [POGOProtos_Data_NpcPokemon] = []
     var _trainerTitle: String = String()
     var _trainerQuote: String = String()
     var _iconURL: String = String()
@@ -252,75 +226,6 @@ extension POGOProtos_Settings_Master_CombatNpcTrainer: SwiftProtobuf.Message, Sw
         if _storage._trainerQuote != rhs_storage._trainerQuote {return false}
         if _storage._iconURL != rhs_storage._iconURL {return false}
         if _storage._backdropImageBundle != rhs_storage._backdropImageBundle {return false}
-        return true
-      }
-      if !storagesAreEqual {return false}
-    }
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension POGOProtos_Settings_Master_CombatNpcTrainer.NpcPokemon: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  public static let protoMessageName: String = POGOProtos_Settings_Master_CombatNpcTrainer.protoMessageName + ".NpcPokemon"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "pokemon_type"),
-    2: .standard(proto: "pokemon_display"),
-  ]
-
-  fileprivate class _StorageClass {
-    var _pokemonType: POGOProtos_Enums_PokemonId = .missingno
-    var _pokemonDisplay: POGOProtos_Data_PokemonDisplay? = nil
-
-    static let defaultInstance = _StorageClass()
-
-    private init() {}
-
-    init(copying source: _StorageClass) {
-      _pokemonType = source._pokemonType
-      _pokemonDisplay = source._pokemonDisplay
-    }
-  }
-
-  fileprivate mutating func _uniqueStorage() -> _StorageClass {
-    if !isKnownUniquelyReferenced(&_storage) {
-      _storage = _StorageClass(copying: _storage)
-    }
-    return _storage
-  }
-
-  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    _ = _uniqueStorage()
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        switch fieldNumber {
-        case 1: try decoder.decodeSingularEnumField(value: &_storage._pokemonType)
-        case 2: try decoder.decodeSingularMessageField(value: &_storage._pokemonDisplay)
-        default: break
-        }
-      }
-    }
-  }
-
-  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if _storage._pokemonType != .missingno {
-        try visitor.visitSingularEnumField(value: _storage._pokemonType, fieldNumber: 1)
-      }
-      if let v = _storage._pokemonDisplay {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      }
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  public static func ==(lhs: POGOProtos_Settings_Master_CombatNpcTrainer.NpcPokemon, rhs: POGOProtos_Settings_Master_CombatNpcTrainer.NpcPokemon) -> Bool {
-    if lhs._storage !== rhs._storage {
-      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
-        let _storage = _args.0
-        let rhs_storage = _args.1
-        if _storage._pokemonType != rhs_storage._pokemonType {return false}
-        if _storage._pokemonDisplay != rhs_storage._pokemonDisplay {return false}
         return true
       }
       if !storagesAreEqual {return false}

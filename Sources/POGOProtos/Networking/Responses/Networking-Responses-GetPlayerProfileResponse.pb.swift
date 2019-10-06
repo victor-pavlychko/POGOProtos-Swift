@@ -34,7 +34,7 @@ public struct POGOProtos_Networking_Responses_GetPlayerProfileResponse {
     set {_uniqueStorage()._startTime = newValue}
   }
 
-  public var badges: [POGOProtos_Networking_Responses_GetPlayerProfileResponse.PlayerBadge] {
+  public var badges: [POGOProtos_Data_PlayerBadge] {
     get {return _storage._badges}
     set {_uniqueStorage()._badges = newValue}
   }
@@ -92,26 +92,6 @@ public struct POGOProtos_Networking_Responses_GetPlayerProfileResponse {
     public init() {}
   }
 
-  public struct PlayerBadge {
-    // SwiftProtobuf.Message conformance is added in an extension below. See the
-    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-    // methods supported on all messages.
-
-    public var badgeType: POGOProtos_Enums_BadgeType = .badgeUnset
-
-    public var rank: Int32 = 0
-
-    public var startValue: Int32 = 0
-
-    public var endValue: Int32 = 0
-
-    public var currentValue: Double = 0
-
-    public var unknownFields = SwiftProtobuf.UnknownStorage()
-
-    public init() {}
-  }
-
   public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
@@ -145,7 +125,7 @@ extension POGOProtos_Networking_Responses_GetPlayerProfileResponse: SwiftProtobu
   fileprivate class _StorageClass {
     var _result: POGOProtos_Networking_Responses_GetPlayerProfileResponse.Result = .unset
     var _startTime: Int64 = 0
-    var _badges: [POGOProtos_Networking_Responses_GetPlayerProfileResponse.PlayerBadge] = []
+    var _badges: [POGOProtos_Data_PlayerBadge] = []
     var _gymBadges: POGOProtos_Networking_Responses_GetPlayerProfileResponse.GymBadges? = nil
 
     static let defaultInstance = _StorageClass()
@@ -255,59 +235,6 @@ extension POGOProtos_Networking_Responses_GetPlayerProfileResponse.GymBadges: Sw
   public static func ==(lhs: POGOProtos_Networking_Responses_GetPlayerProfileResponse.GymBadges, rhs: POGOProtos_Networking_Responses_GetPlayerProfileResponse.GymBadges) -> Bool {
     if lhs.gymBadge != rhs.gymBadge {return false}
     if lhs.total != rhs.total {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension POGOProtos_Networking_Responses_GetPlayerProfileResponse.PlayerBadge: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  public static let protoMessageName: String = POGOProtos_Networking_Responses_GetPlayerProfileResponse.protoMessageName + ".PlayerBadge"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "badge_type"),
-    2: .same(proto: "rank"),
-    3: .standard(proto: "start_value"),
-    4: .standard(proto: "end_value"),
-    5: .standard(proto: "current_value"),
-  ]
-
-  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1: try decoder.decodeSingularEnumField(value: &self.badgeType)
-      case 2: try decoder.decodeSingularInt32Field(value: &self.rank)
-      case 3: try decoder.decodeSingularInt32Field(value: &self.startValue)
-      case 4: try decoder.decodeSingularInt32Field(value: &self.endValue)
-      case 5: try decoder.decodeSingularDoubleField(value: &self.currentValue)
-      default: break
-      }
-    }
-  }
-
-  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.badgeType != .badgeUnset {
-      try visitor.visitSingularEnumField(value: self.badgeType, fieldNumber: 1)
-    }
-    if self.rank != 0 {
-      try visitor.visitSingularInt32Field(value: self.rank, fieldNumber: 2)
-    }
-    if self.startValue != 0 {
-      try visitor.visitSingularInt32Field(value: self.startValue, fieldNumber: 3)
-    }
-    if self.endValue != 0 {
-      try visitor.visitSingularInt32Field(value: self.endValue, fieldNumber: 4)
-    }
-    if self.currentValue != 0 {
-      try visitor.visitSingularDoubleField(value: self.currentValue, fieldNumber: 5)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  public static func ==(lhs: POGOProtos_Networking_Responses_GetPlayerProfileResponse.PlayerBadge, rhs: POGOProtos_Networking_Responses_GetPlayerProfileResponse.PlayerBadge) -> Bool {
-    if lhs.badgeType != rhs.badgeType {return false}
-    if lhs.rank != rhs.rank {return false}
-    if lhs.startValue != rhs.startValue {return false}
-    if lhs.endValue != rhs.endValue {return false}
-    if lhs.currentValue != rhs.currentValue {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

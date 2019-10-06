@@ -29,8 +29,8 @@ public struct POGOProtos_Networking_Responses_RegisterBackgroundDeviceResponse {
     set {_uniqueStorage()._status = newValue}
   }
 
-  public var token: POGOProtos_Networking_Responses_RegisterBackgroundDeviceResponse.BackgroundToken {
-    get {return _storage._token ?? POGOProtos_Networking_Responses_RegisterBackgroundDeviceResponse.BackgroundToken()}
+  public var token: POGOProtos_Data_BackgroundToken {
+    get {return _storage._token ?? POGOProtos_Data_BackgroundToken()}
     set {_uniqueStorage()._token = newValue}
   }
   /// Returns true if `token` has been explicitly set.
@@ -71,22 +71,6 @@ public struct POGOProtos_Networking_Responses_RegisterBackgroundDeviceResponse {
 
   }
 
-  public struct BackgroundToken {
-    // SwiftProtobuf.Message conformance is added in an extension below. See the
-    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-    // methods supported on all messages.
-
-    public var token: Data = SwiftProtobuf.Internal.emptyData
-
-    public var expirationTime: Int64 = 0
-
-    public var iv: Data = SwiftProtobuf.Internal.emptyData
-
-    public var unknownFields = SwiftProtobuf.UnknownStorage()
-
-    public init() {}
-  }
-
   public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
@@ -118,7 +102,7 @@ extension POGOProtos_Networking_Responses_RegisterBackgroundDeviceResponse: Swif
 
   fileprivate class _StorageClass {
     var _status: POGOProtos_Networking_Responses_RegisterBackgroundDeviceResponse.Status = .unset
-    var _token: POGOProtos_Networking_Responses_RegisterBackgroundDeviceResponse.BackgroundToken? = nil
+    var _token: POGOProtos_Data_BackgroundToken? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -184,45 +168,4 @@ extension POGOProtos_Networking_Responses_RegisterBackgroundDeviceResponse.Statu
     1: .same(proto: "SUCCESS"),
     2: .same(proto: "ERROR"),
   ]
-}
-
-extension POGOProtos_Networking_Responses_RegisterBackgroundDeviceResponse.BackgroundToken: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  public static let protoMessageName: String = POGOProtos_Networking_Responses_RegisterBackgroundDeviceResponse.protoMessageName + ".BackgroundToken"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "token"),
-    2: .standard(proto: "expiration_time"),
-    3: .same(proto: "iv"),
-  ]
-
-  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1: try decoder.decodeSingularBytesField(value: &self.token)
-      case 2: try decoder.decodeSingularInt64Field(value: &self.expirationTime)
-      case 3: try decoder.decodeSingularBytesField(value: &self.iv)
-      default: break
-      }
-    }
-  }
-
-  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.token.isEmpty {
-      try visitor.visitSingularBytesField(value: self.token, fieldNumber: 1)
-    }
-    if self.expirationTime != 0 {
-      try visitor.visitSingularInt64Field(value: self.expirationTime, fieldNumber: 2)
-    }
-    if !self.iv.isEmpty {
-      try visitor.visitSingularBytesField(value: self.iv, fieldNumber: 3)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  public static func ==(lhs: POGOProtos_Networking_Responses_RegisterBackgroundDeviceResponse.BackgroundToken, rhs: POGOProtos_Networking_Responses_RegisterBackgroundDeviceResponse.BackgroundToken) -> Bool {
-    if lhs.token != rhs.token {return false}
-    if lhs.expirationTime != rhs.expirationTime {return false}
-    if lhs.iv != rhs.iv {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
 }

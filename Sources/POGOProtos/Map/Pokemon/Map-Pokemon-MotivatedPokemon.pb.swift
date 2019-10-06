@@ -63,28 +63,12 @@ public struct POGOProtos_Map_Pokemon_MotivatedPokemon {
     set {_uniqueStorage()._feedCooldownDurationMillis = newValue}
   }
 
-  public var foodValue: [POGOProtos_Map_Pokemon_MotivatedPokemon.FoodValue] {
+  public var foodValue: [POGOProtos_Data_FoodValue] {
     get {return _storage._foodValue}
     set {_uniqueStorage()._foodValue = newValue}
   }
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  public struct FoodValue {
-    // SwiftProtobuf.Message conformance is added in an extension below. See the
-    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-    // methods supported on all messages.
-
-    public var motivationIncrease: Float = 0
-
-    public var cpIncrease: Int32 = 0
-
-    public var foodItem: POGOProtos_Inventory_Item_ItemId = .itemUnknown
-
-    public var unknownFields = SwiftProtobuf.UnknownStorage()
-
-    public init() {}
-  }
 
   public init() {}
 
@@ -116,7 +100,7 @@ extension POGOProtos_Map_Pokemon_MotivatedPokemon: SwiftProtobuf.Message, SwiftP
     var _cpNow: Int32 = 0
     var _berryValue: Float = 0
     var _feedCooldownDurationMillis: Int64 = 0
-    var _foodValue: [POGOProtos_Map_Pokemon_MotivatedPokemon.FoodValue] = []
+    var _foodValue: [POGOProtos_Data_FoodValue] = []
 
     static let defaultInstance = _StorageClass()
 
@@ -207,47 +191,6 @@ extension POGOProtos_Map_Pokemon_MotivatedPokemon: SwiftProtobuf.Message, SwiftP
       }
       if !storagesAreEqual {return false}
     }
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension POGOProtos_Map_Pokemon_MotivatedPokemon.FoodValue: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  public static let protoMessageName: String = POGOProtos_Map_Pokemon_MotivatedPokemon.protoMessageName + ".FoodValue"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "motivation_increase"),
-    2: .standard(proto: "cp_increase"),
-    3: .standard(proto: "food_item"),
-  ]
-
-  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1: try decoder.decodeSingularFloatField(value: &self.motivationIncrease)
-      case 2: try decoder.decodeSingularInt32Field(value: &self.cpIncrease)
-      case 3: try decoder.decodeSingularEnumField(value: &self.foodItem)
-      default: break
-      }
-    }
-  }
-
-  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.motivationIncrease != 0 {
-      try visitor.visitSingularFloatField(value: self.motivationIncrease, fieldNumber: 1)
-    }
-    if self.cpIncrease != 0 {
-      try visitor.visitSingularInt32Field(value: self.cpIncrease, fieldNumber: 2)
-    }
-    if self.foodItem != .itemUnknown {
-      try visitor.visitSingularEnumField(value: self.foodItem, fieldNumber: 3)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  public static func ==(lhs: POGOProtos_Map_Pokemon_MotivatedPokemon.FoodValue, rhs: POGOProtos_Map_Pokemon_MotivatedPokemon.FoodValue) -> Bool {
-    if lhs.motivationIncrease != rhs.motivationIncrease {return false}
-    if lhs.cpIncrease != rhs.cpIncrease {return false}
-    if lhs.foodItem != rhs.foodItem {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

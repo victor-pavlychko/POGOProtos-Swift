@@ -479,24 +479,6 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
   case completeSnapshotSession // = 1110
 
   /// Implemented
-  case startIncident // = 1200
-
-  /// Implemented
-  case invasionCompleteDialogue // = 1201
-
-  /// Implemented
-  case invasionOpenCombatSession // = 1202
-
-  /// Implemented
-  case invasionBattleUpdate // = 1203
-
-  /// Implemented
-  case invasionEncounter // = 1204
-
-  /// Implemented
-  case purifyPokemon // = 1205
-
-  /// Implemented
   case registerPushNotification // = 5000
 
   /// ???
@@ -763,12 +745,6 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case 1106: self = .changeTeam
     case 1107: self = .getWebToken
     case 1110: self = .completeSnapshotSession
-    case 1200: self = .startIncident
-    case 1201: self = .invasionCompleteDialogue
-    case 1202: self = .invasionOpenCombatSession
-    case 1203: self = .invasionBattleUpdate
-    case 1204: self = .invasionEncounter
-    case 1205: self = .purifyPokemon
     case 5000: self = .registerPushNotification
     case 5001: self = .unregisterPushNotification
     case 5002: self = .updateNotificationStatus
@@ -963,12 +939,6 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case .changeTeam: return 1106
     case .getWebToken: return 1107
     case .completeSnapshotSession: return 1110
-    case .startIncident: return 1200
-    case .invasionCompleteDialogue: return 1201
-    case .invasionOpenCombatSession: return 1202
-    case .invasionBattleUpdate: return 1203
-    case .invasionEncounter: return 1204
-    case .purifyPokemon: return 1205
     case .registerPushNotification: return 5000
     case .unregisterPushNotification: return 5001
     case .updateNotificationStatus: return 5002
@@ -1168,12 +1138,6 @@ extension POGOProtos_Networking_Requests_RequestType: CaseIterable {
     .changeTeam,
     .getWebToken,
     .completeSnapshotSession,
-    .startIncident,
-    .invasionCompleteDialogue,
-    .invasionOpenCombatSession,
-    .invasionBattleUpdate,
-    .invasionEncounter,
-    .purifyPokemon,
     .registerPushNotification,
     .unregisterPushNotification,
     .updateNotificationStatus,
@@ -1371,12 +1335,6 @@ extension POGOProtos_Networking_Requests_RequestType: SwiftProtobuf._ProtoNamePr
     1106: .same(proto: "CHANGE_TEAM"),
     1107: .same(proto: "GET_WEB_TOKEN"),
     1110: .same(proto: "COMPLETE_SNAPSHOT_SESSION"),
-    1200: .same(proto: "START_INCIDENT"),
-    1201: .same(proto: "INVASION_COMPLETE_DIALOGUE"),
-    1202: .same(proto: "INVASION_OPEN_COMBAT_SESSION"),
-    1203: .same(proto: "INVASION_BATTLE_UPDATE"),
-    1204: .same(proto: "INVASION_ENCOUNTER"),
-    1205: .same(proto: "PURIFY_POKEMON"),
     5000: .same(proto: "REGISTER_PUSH_NOTIFICATION"),
     5001: .same(proto: "UNREGISTER_PUSH_NOTIFICATION"),
     5002: .same(proto: "UPDATE_NOTIFICATION_STATUS"),

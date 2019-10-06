@@ -19,70 +19,6 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-public enum POGOProtos_Enums_InvasionTelemetryIds: SwiftProtobuf.Enum {
-  public typealias RawValue = Int
-  case undefinedInvasionEvent // = 0
-  case invasionNpcTap // = 1
-  case invasionBattleStarted // = 2
-  case invasionBattleFinished // = 3
-  case invasionEncounterStarted // = 4
-  case invasionEncounterFinished // = 5
-  case invasionPokemonPurified // = 6
-  case invasionAfterPoiExited // = 7
-  case UNRECOGNIZED(Int)
-
-  public init() {
-    self = .undefinedInvasionEvent
-  }
-
-  public init?(rawValue: Int) {
-    switch rawValue {
-    case 0: self = .undefinedInvasionEvent
-    case 1: self = .invasionNpcTap
-    case 2: self = .invasionBattleStarted
-    case 3: self = .invasionBattleFinished
-    case 4: self = .invasionEncounterStarted
-    case 5: self = .invasionEncounterFinished
-    case 6: self = .invasionPokemonPurified
-    case 7: self = .invasionAfterPoiExited
-    default: self = .UNRECOGNIZED(rawValue)
-    }
-  }
-
-  public var rawValue: Int {
-    switch self {
-    case .undefinedInvasionEvent: return 0
-    case .invasionNpcTap: return 1
-    case .invasionBattleStarted: return 2
-    case .invasionBattleFinished: return 3
-    case .invasionEncounterStarted: return 4
-    case .invasionEncounterFinished: return 5
-    case .invasionPokemonPurified: return 6
-    case .invasionAfterPoiExited: return 7
-    case .UNRECOGNIZED(let i): return i
-    }
-  }
-
-}
-
-#if swift(>=4.2)
-
-extension POGOProtos_Enums_InvasionTelemetryIds: CaseIterable {
-  // The compiler won't synthesize support with the UNRECOGNIZED case.
-  public static var allCases: [POGOProtos_Enums_InvasionTelemetryIds] = [
-    .undefinedInvasionEvent,
-    .invasionNpcTap,
-    .invasionBattleStarted,
-    .invasionBattleFinished,
-    .invasionEncounterStarted,
-    .invasionEncounterFinished,
-    .invasionPokemonPurified,
-    .invasionAfterPoiExited,
-  ]
-}
-
-#endif  // swift(>=4.2)
-
 public enum POGOProtos_Enums_DeviceServiceTelemetryIds: SwiftProtobuf.Enum {
   public typealias RawValue = Int
   case undefinedDeviceService // = 0
@@ -1380,19 +1316,6 @@ extension POGOProtos_Enums_WebTelemetryIds: CaseIterable {
 #endif  // swift(>=4.2)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
-
-extension POGOProtos_Enums_InvasionTelemetryIds: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "UNDEFINED_INVASION_EVENT"),
-    1: .same(proto: "INVASION_NPC_TAP"),
-    2: .same(proto: "INVASION_BATTLE_STARTED"),
-    3: .same(proto: "INVASION_BATTLE_FINISHED"),
-    4: .same(proto: "INVASION_ENCOUNTER_STARTED"),
-    5: .same(proto: "INVASION_ENCOUNTER_FINISHED"),
-    6: .same(proto: "INVASION_POKEMON_PURIFIED"),
-    7: .same(proto: "INVASION_AFTER_POI_EXITED"),
-  ]
-}
 
 extension POGOProtos_Enums_DeviceServiceTelemetryIds: SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [

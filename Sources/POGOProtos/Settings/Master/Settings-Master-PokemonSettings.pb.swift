@@ -260,15 +260,6 @@ public struct POGOProtos_Settings_Master_PokemonSettings {
     set {_uniqueStorage()._photobombAnimationOverrides = newValue}
   }
 
-  public var shadow: POGOProtos_Settings_Master_PokemonSettings.ShadowAttributes {
-    get {return _storage._shadow ?? POGOProtos_Settings_Master_PokemonSettings.ShadowAttributes()}
-    set {_uniqueStorage()._shadow = newValue}
-  }
-  /// Returns true if `shadow` has been explicitly set.
-  public var hasShadow: Bool {return _storage._shadow != nil}
-  /// Clears the value of `shadow`. Subsequent reads from it will return its default value.
-  public mutating func clearShadow() {_uniqueStorage()._shadow = nil}
-
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public struct PokemonThirdMoveAttributes {
@@ -279,24 +270,6 @@ public struct POGOProtos_Settings_Master_PokemonSettings {
     public var stardustToUnlock: Int32 = 0
 
     public var candyToUnlock: Int32 = 0
-
-    public var unknownFields = SwiftProtobuf.UnknownStorage()
-
-    public init() {}
-  }
-
-  public struct ShadowAttributes {
-    // SwiftProtobuf.Message conformance is added in an extension below. See the
-    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-    // methods supported on all messages.
-
-    public var purificationStardustNeeded: UInt32 = 0
-
-    public var purificationCandyNeeded: UInt32 = 0
-
-    public var purifiedChargeMove: POGOProtos_Enums_PokemonMove = .moveUnset
-
-    public var shadowChargeMove: POGOProtos_Enums_PokemonMove = .moveUnset
 
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -359,7 +332,6 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
     43: .standard(proto: "combat_player_focus_camera_angle"),
     44: .standard(proto: "combat_player_pokemon_position_offset"),
     45: .standard(proto: "photobomb_animation_overrides"),
-    46: .same(proto: "shadow"),
   ]
 
   fileprivate class _StorageClass {
@@ -407,7 +379,6 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
     var _combatPlayerFocusCameraAngle: [Float] = []
     var _combatPlayerPokemonPositionOffset: [Float] = []
     var _photobombAnimationOverrides: [POGOProtos_Settings_Master_Pokemon_AnimationOverride] = []
-    var _shadow: POGOProtos_Settings_Master_PokemonSettings.ShadowAttributes? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -458,7 +429,6 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
       _combatPlayerFocusCameraAngle = source._combatPlayerFocusCameraAngle
       _combatPlayerPokemonPositionOffset = source._combatPlayerPokemonPositionOffset
       _photobombAnimationOverrides = source._photobombAnimationOverrides
-      _shadow = source._shadow
     }
   }
 
@@ -518,7 +488,6 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
         case 43: try decoder.decodeRepeatedFloatField(value: &_storage._combatPlayerFocusCameraAngle)
         case 44: try decoder.decodeRepeatedFloatField(value: &_storage._combatPlayerPokemonPositionOffset)
         case 45: try decoder.decodeRepeatedMessageField(value: &_storage._photobombAnimationOverrides)
-        case 46: try decoder.decodeSingularMessageField(value: &_storage._shadow)
         default: break
         }
       }
@@ -659,9 +628,6 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
       if !_storage._photobombAnimationOverrides.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._photobombAnimationOverrides, fieldNumber: 45)
       }
-      if let v = _storage._shadow {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 46)
-      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -715,7 +681,6 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
         if _storage._combatPlayerFocusCameraAngle != rhs_storage._combatPlayerFocusCameraAngle {return false}
         if _storage._combatPlayerPokemonPositionOffset != rhs_storage._combatPlayerPokemonPositionOffset {return false}
         if _storage._photobombAnimationOverrides != rhs_storage._photobombAnimationOverrides {return false}
-        if _storage._shadow != rhs_storage._shadow {return false}
         return true
       }
       if !storagesAreEqual {return false}
@@ -755,53 +720,6 @@ extension POGOProtos_Settings_Master_PokemonSettings.PokemonThirdMoveAttributes:
   public static func ==(lhs: POGOProtos_Settings_Master_PokemonSettings.PokemonThirdMoveAttributes, rhs: POGOProtos_Settings_Master_PokemonSettings.PokemonThirdMoveAttributes) -> Bool {
     if lhs.stardustToUnlock != rhs.stardustToUnlock {return false}
     if lhs.candyToUnlock != rhs.candyToUnlock {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension POGOProtos_Settings_Master_PokemonSettings.ShadowAttributes: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  public static let protoMessageName: String = POGOProtos_Settings_Master_PokemonSettings.protoMessageName + ".ShadowAttributes"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "purification_stardust_needed"),
-    2: .standard(proto: "purification_candy_needed"),
-    3: .standard(proto: "purified_charge_move"),
-    4: .standard(proto: "shadow_charge_move"),
-  ]
-
-  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1: try decoder.decodeSingularUInt32Field(value: &self.purificationStardustNeeded)
-      case 2: try decoder.decodeSingularUInt32Field(value: &self.purificationCandyNeeded)
-      case 3: try decoder.decodeSingularEnumField(value: &self.purifiedChargeMove)
-      case 4: try decoder.decodeSingularEnumField(value: &self.shadowChargeMove)
-      default: break
-      }
-    }
-  }
-
-  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.purificationStardustNeeded != 0 {
-      try visitor.visitSingularUInt32Field(value: self.purificationStardustNeeded, fieldNumber: 1)
-    }
-    if self.purificationCandyNeeded != 0 {
-      try visitor.visitSingularUInt32Field(value: self.purificationCandyNeeded, fieldNumber: 2)
-    }
-    if self.purifiedChargeMove != .moveUnset {
-      try visitor.visitSingularEnumField(value: self.purifiedChargeMove, fieldNumber: 3)
-    }
-    if self.shadowChargeMove != .moveUnset {
-      try visitor.visitSingularEnumField(value: self.shadowChargeMove, fieldNumber: 4)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  public static func ==(lhs: POGOProtos_Settings_Master_PokemonSettings.ShadowAttributes, rhs: POGOProtos_Settings_Master_PokemonSettings.ShadowAttributes) -> Bool {
-    if lhs.purificationStardustNeeded != rhs.purificationStardustNeeded {return false}
-    if lhs.purificationCandyNeeded != rhs.purificationCandyNeeded {return false}
-    if lhs.purifiedChargeMove != rhs.purifiedChargeMove {return false}
-    if lhs.shadowChargeMove != rhs.shadowChargeMove {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

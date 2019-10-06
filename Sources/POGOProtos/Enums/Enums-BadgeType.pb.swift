@@ -77,8 +77,6 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
   case badgeUltraLeague // = 53
   case badgeMasterLeague // = 54
   case badgePhotobomb // = 55
-  case badgePokemonPurified // = 57
-  case badgeRocketGruntsDefeated // = 58
   case badgeEventMin // = 2000
   case badgeChicagoFestJuly2017 // = 2001
   case badgePikachuOutbreakYokohama2017 // = 2002
@@ -153,24 +151,6 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
   case badgeGofest2019AmericasDay04NorthEarlyaccess // = 5018
   case badgeGofest2019AmericasDay04SouthGeneral // = 5019
   case badgeGofest2019AmericasDay04SouthEarlyaccess // = 5020
-  case badgeGofest2019EmeaDay00General // = 5021
-  case badgeGofest2019EmeaDay00Earlyaccess // = 5022
-  case badgeGofest2019EmeaDay01General // = 5023
-  case badgeGofest2019EmeaDay01Earlyaccess // = 5024
-  case badgeGofest2019EmeaDay02General // = 5025
-  case badgeGofest2019EmeaDay02Earlyaccess // = 5026
-  case badgeGofest2019EmeaDay03General // = 5027
-  case badgeGofest2019EmeaDay03Earlyaccess // = 5028
-  case badgeGofest2019EmeaDay04General // = 5029
-  case badgeGofest2019EmeaDay04Earlyaccess // = 5030
-  case badgeGofest2019ApacDay00General // = 5031
-  case badgeGofest2019ApacDay01General // = 5032
-  case badgeGofest2019ApacDay02General // = 5033
-  case badgeGofest2019ApacDay03General // = 5034
-  case badgeGofest2019ApacDay04General // = 5035
-  case badgeGofest2019ApacDay05General // = 5036
-  case badgeGofest2019ApacDay06General // = 5037
-  case badgeGofest2019ApacDay07General // = 5038
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -235,8 +215,6 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
     case 53: self = .badgeUltraLeague
     case 54: self = .badgeMasterLeague
     case 55: self = .badgePhotobomb
-    case 57: self = .badgePokemonPurified
-    case 58: self = .badgeRocketGruntsDefeated
     case 2000: self = .badgeEventMin
     case 2001: self = .badgeChicagoFestJuly2017
     case 2002: self = .badgePikachuOutbreakYokohama2017
@@ -311,24 +289,6 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
     case 5018: self = .badgeGofest2019AmericasDay04NorthEarlyaccess
     case 5019: self = .badgeGofest2019AmericasDay04SouthGeneral
     case 5020: self = .badgeGofest2019AmericasDay04SouthEarlyaccess
-    case 5021: self = .badgeGofest2019EmeaDay00General
-    case 5022: self = .badgeGofest2019EmeaDay00Earlyaccess
-    case 5023: self = .badgeGofest2019EmeaDay01General
-    case 5024: self = .badgeGofest2019EmeaDay01Earlyaccess
-    case 5025: self = .badgeGofest2019EmeaDay02General
-    case 5026: self = .badgeGofest2019EmeaDay02Earlyaccess
-    case 5027: self = .badgeGofest2019EmeaDay03General
-    case 5028: self = .badgeGofest2019EmeaDay03Earlyaccess
-    case 5029: self = .badgeGofest2019EmeaDay04General
-    case 5030: self = .badgeGofest2019EmeaDay04Earlyaccess
-    case 5031: self = .badgeGofest2019ApacDay00General
-    case 5032: self = .badgeGofest2019ApacDay01General
-    case 5033: self = .badgeGofest2019ApacDay02General
-    case 5034: self = .badgeGofest2019ApacDay03General
-    case 5035: self = .badgeGofest2019ApacDay04General
-    case 5036: self = .badgeGofest2019ApacDay05General
-    case 5037: self = .badgeGofest2019ApacDay06General
-    case 5038: self = .badgeGofest2019ApacDay07General
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -391,8 +351,6 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
     case .badgeUltraLeague: return 53
     case .badgeMasterLeague: return 54
     case .badgePhotobomb: return 55
-    case .badgePokemonPurified: return 57
-    case .badgeRocketGruntsDefeated: return 58
     case .badgeEventMin: return 2000
     case .badgeChicagoFestJuly2017: return 2001
     case .badgePikachuOutbreakYokohama2017: return 2002
@@ -467,24 +425,6 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
     case .badgeGofest2019AmericasDay04NorthEarlyaccess: return 5018
     case .badgeGofest2019AmericasDay04SouthGeneral: return 5019
     case .badgeGofest2019AmericasDay04SouthEarlyaccess: return 5020
-    case .badgeGofest2019EmeaDay00General: return 5021
-    case .badgeGofest2019EmeaDay00Earlyaccess: return 5022
-    case .badgeGofest2019EmeaDay01General: return 5023
-    case .badgeGofest2019EmeaDay01Earlyaccess: return 5024
-    case .badgeGofest2019EmeaDay02General: return 5025
-    case .badgeGofest2019EmeaDay02Earlyaccess: return 5026
-    case .badgeGofest2019EmeaDay03General: return 5027
-    case .badgeGofest2019EmeaDay03Earlyaccess: return 5028
-    case .badgeGofest2019EmeaDay04General: return 5029
-    case .badgeGofest2019EmeaDay04Earlyaccess: return 5030
-    case .badgeGofest2019ApacDay00General: return 5031
-    case .badgeGofest2019ApacDay01General: return 5032
-    case .badgeGofest2019ApacDay02General: return 5033
-    case .badgeGofest2019ApacDay03General: return 5034
-    case .badgeGofest2019ApacDay04General: return 5035
-    case .badgeGofest2019ApacDay05General: return 5036
-    case .badgeGofest2019ApacDay06General: return 5037
-    case .badgeGofest2019ApacDay07General: return 5038
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -552,8 +492,6 @@ extension POGOProtos_Enums_BadgeType: CaseIterable {
     .badgeUltraLeague,
     .badgeMasterLeague,
     .badgePhotobomb,
-    .badgePokemonPurified,
-    .badgeRocketGruntsDefeated,
     .badgeEventMin,
     .badgeChicagoFestJuly2017,
     .badgePikachuOutbreakYokohama2017,
@@ -628,24 +566,6 @@ extension POGOProtos_Enums_BadgeType: CaseIterable {
     .badgeGofest2019AmericasDay04NorthEarlyaccess,
     .badgeGofest2019AmericasDay04SouthGeneral,
     .badgeGofest2019AmericasDay04SouthEarlyaccess,
-    .badgeGofest2019EmeaDay00General,
-    .badgeGofest2019EmeaDay00Earlyaccess,
-    .badgeGofest2019EmeaDay01General,
-    .badgeGofest2019EmeaDay01Earlyaccess,
-    .badgeGofest2019EmeaDay02General,
-    .badgeGofest2019EmeaDay02Earlyaccess,
-    .badgeGofest2019EmeaDay03General,
-    .badgeGofest2019EmeaDay03Earlyaccess,
-    .badgeGofest2019EmeaDay04General,
-    .badgeGofest2019EmeaDay04Earlyaccess,
-    .badgeGofest2019ApacDay00General,
-    .badgeGofest2019ApacDay01General,
-    .badgeGofest2019ApacDay02General,
-    .badgeGofest2019ApacDay03General,
-    .badgeGofest2019ApacDay04General,
-    .badgeGofest2019ApacDay05General,
-    .badgeGofest2019ApacDay06General,
-    .badgeGofest2019ApacDay07General,
   ]
 }
 
@@ -711,8 +631,6 @@ extension POGOProtos_Enums_BadgeType: SwiftProtobuf._ProtoNameProviding {
     53: .same(proto: "BADGE_ULTRA_LEAGUE"),
     54: .same(proto: "BADGE_MASTER_LEAGUE"),
     55: .same(proto: "BADGE_PHOTOBOMB"),
-    57: .same(proto: "BADGE_POKEMON_PURIFIED"),
-    58: .same(proto: "BADGE_ROCKET_GRUNTS_DEFEATED"),
     2000: .same(proto: "BADGE_EVENT_MIN"),
     2001: .same(proto: "BADGE_CHICAGO_FEST_JULY_2017"),
     2002: .same(proto: "BADGE_PIKACHU_OUTBREAK_YOKOHAMA_2017"),
@@ -787,23 +705,5 @@ extension POGOProtos_Enums_BadgeType: SwiftProtobuf._ProtoNameProviding {
     5018: .same(proto: "BADGE_GOFEST_2019_AMERICAS_DAY_04_NORTH_EARLYACCESS"),
     5019: .same(proto: "BADGE_GOFEST_2019_AMERICAS_DAY_04_SOUTH_GENERAL"),
     5020: .same(proto: "BADGE_GOFEST_2019_AMERICAS_DAY_04_SOUTH_EARLYACCESS"),
-    5021: .same(proto: "BADGE_GOFEST_2019_EMEA_DAY_00_GENERAL"),
-    5022: .same(proto: "BADGE_GOFEST_2019_EMEA_DAY_00_EARLYACCESS"),
-    5023: .same(proto: "BADGE_GOFEST_2019_EMEA_DAY_01_GENERAL"),
-    5024: .same(proto: "BADGE_GOFEST_2019_EMEA_DAY_01_EARLYACCESS"),
-    5025: .same(proto: "BADGE_GOFEST_2019_EMEA_DAY_02_GENERAL"),
-    5026: .same(proto: "BADGE_GOFEST_2019_EMEA_DAY_02_EARLYACCESS"),
-    5027: .same(proto: "BADGE_GOFEST_2019_EMEA_DAY_03_GENERAL"),
-    5028: .same(proto: "BADGE_GOFEST_2019_EMEA_DAY_03_EARLYACCESS"),
-    5029: .same(proto: "BADGE_GOFEST_2019_EMEA_DAY_04_GENERAL"),
-    5030: .same(proto: "BADGE_GOFEST_2019_EMEA_DAY_04_EARLYACCESS"),
-    5031: .same(proto: "BADGE_GOFEST_2019_APAC_DAY_00_GENERAL"),
-    5032: .same(proto: "BADGE_GOFEST_2019_APAC_DAY_01_GENERAL"),
-    5033: .same(proto: "BADGE_GOFEST_2019_APAC_DAY_02_GENERAL"),
-    5034: .same(proto: "BADGE_GOFEST_2019_APAC_DAY_03_GENERAL"),
-    5035: .same(proto: "BADGE_GOFEST_2019_APAC_DAY_04_GENERAL"),
-    5036: .same(proto: "BADGE_GOFEST_2019_APAC_DAY_05_GENERAL"),
-    5037: .same(proto: "BADGE_GOFEST_2019_APAC_DAY_06_GENERAL"),
-    5038: .same(proto: "BADGE_GOFEST_2019_APAC_DAY_07_GENERAL"),
   ]
 }

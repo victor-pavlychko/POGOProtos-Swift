@@ -48,8 +48,8 @@ public struct POGOProtos_Data_Combat_CombatPlayerProfile {
     set {_uniqueStorage()._buddyPokemonID = newValue}
   }
 
-  public var location: POGOProtos_Data_Combat_CombatPlayerProfile.Location {
-    get {return _storage._location ?? POGOProtos_Data_Combat_CombatPlayerProfile.Location()}
+  public var location: POGOProtos_Data_Location {
+    get {return _storage._location ?? POGOProtos_Data_Location()}
     set {_uniqueStorage()._location = newValue}
   }
   /// Returns true if `location` has been explicitly set.
@@ -67,20 +67,6 @@ public struct POGOProtos_Data_Combat_CombatPlayerProfile {
   public mutating func clearCombatPlayerPreferences() {_uniqueStorage()._combatPlayerPreferences = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  public struct Location {
-    // SwiftProtobuf.Message conformance is added in an extension below. See the
-    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-    // methods supported on all messages.
-
-    public var latDegree: Double = 0
-
-    public var lngDegree: Double = 0
-
-    public var unknownFields = SwiftProtobuf.UnknownStorage()
-
-    public init() {}
-  }
 
   public init() {}
 
@@ -107,7 +93,7 @@ extension POGOProtos_Data_Combat_CombatPlayerProfile: SwiftProtobuf.Message, Swi
     var _publicProfile: POGOProtos_Data_Player_PlayerPublicProfile? = nil
     var _combatLeagueTemplateID: [String] = []
     var _buddyPokemonID: UInt64 = 0
-    var _location: POGOProtos_Data_Combat_CombatPlayerProfile.Location? = nil
+    var _location: POGOProtos_Data_Location? = nil
     var _combatPlayerPreferences: POGOProtos_Data_Combat_CombatPlayerPreferences? = nil
 
     static let defaultInstance = _StorageClass()
@@ -187,41 +173,6 @@ extension POGOProtos_Data_Combat_CombatPlayerProfile: SwiftProtobuf.Message, Swi
       }
       if !storagesAreEqual {return false}
     }
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension POGOProtos_Data_Combat_CombatPlayerProfile.Location: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  public static let protoMessageName: String = POGOProtos_Data_Combat_CombatPlayerProfile.protoMessageName + ".Location"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "lat_degree"),
-    2: .standard(proto: "lng_degree"),
-  ]
-
-  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1: try decoder.decodeSingularDoubleField(value: &self.latDegree)
-      case 2: try decoder.decodeSingularDoubleField(value: &self.lngDegree)
-      default: break
-      }
-    }
-  }
-
-  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.latDegree != 0 {
-      try visitor.visitSingularDoubleField(value: self.latDegree, fieldNumber: 1)
-    }
-    if self.lngDegree != 0 {
-      try visitor.visitSingularDoubleField(value: self.lngDegree, fieldNumber: 2)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  public static func ==(lhs: POGOProtos_Data_Combat_CombatPlayerProfile.Location, rhs: POGOProtos_Data_Combat_CombatPlayerProfile.Location) -> Bool {
-    if lhs.latDegree != rhs.latDegree {return false}
-    if lhs.lngDegree != rhs.lngDegree {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

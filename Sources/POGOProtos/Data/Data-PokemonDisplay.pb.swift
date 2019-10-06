@@ -34,56 +34,10 @@ public struct POGOProtos_Data_PokemonDisplay {
 
   public var weatherBoostedCondition: POGOProtos_Enums_WeatherCondition = .none
 
-  public var alignment: POGOProtos_Data_PokemonDisplay.Alignment = .unset
-
   public var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  public enum Alignment: SwiftProtobuf.Enum {
-    public typealias RawValue = Int
-    case unset // = 0
-    case shadow // = 1
-    case purified // = 2
-    case UNRECOGNIZED(Int)
-
-    public init() {
-      self = .unset
-    }
-
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .unset
-      case 1: self = .shadow
-      case 2: self = .purified
-      default: self = .UNRECOGNIZED(rawValue)
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .unset: return 0
-      case .shadow: return 1
-      case .purified: return 2
-      case .UNRECOGNIZED(let i): return i
-      }
-    }
-
-  }
 
   public init() {}
 }
-
-#if swift(>=4.2)
-
-extension POGOProtos_Data_PokemonDisplay.Alignment: CaseIterable {
-  // The compiler won't synthesize support with the UNRECOGNIZED case.
-  public static var allCases: [POGOProtos_Data_PokemonDisplay.Alignment] = [
-    .unset,
-    .shadow,
-    .purified,
-  ]
-}
-
-#endif  // swift(>=4.2)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
@@ -97,7 +51,6 @@ extension POGOProtos_Data_PokemonDisplay: SwiftProtobuf.Message, SwiftProtobuf._
     3: .same(proto: "shiny"),
     4: .same(proto: "form"),
     5: .standard(proto: "weather_boosted_condition"),
-    6: .same(proto: "alignment"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -108,7 +61,6 @@ extension POGOProtos_Data_PokemonDisplay: SwiftProtobuf.Message, SwiftProtobuf._
       case 3: try decoder.decodeSingularBoolField(value: &self.shiny)
       case 4: try decoder.decodeSingularEnumField(value: &self.form)
       case 5: try decoder.decodeSingularEnumField(value: &self.weatherBoostedCondition)
-      case 6: try decoder.decodeSingularEnumField(value: &self.alignment)
       default: break
       }
     }
@@ -130,9 +82,6 @@ extension POGOProtos_Data_PokemonDisplay: SwiftProtobuf.Message, SwiftProtobuf._
     if self.weatherBoostedCondition != .none {
       try visitor.visitSingularEnumField(value: self.weatherBoostedCondition, fieldNumber: 5)
     }
-    if self.alignment != .unset {
-      try visitor.visitSingularEnumField(value: self.alignment, fieldNumber: 6)
-    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -142,16 +91,7 @@ extension POGOProtos_Data_PokemonDisplay: SwiftProtobuf.Message, SwiftProtobuf._
     if lhs.shiny != rhs.shiny {return false}
     if lhs.form != rhs.form {return false}
     if lhs.weatherBoostedCondition != rhs.weatherBoostedCondition {return false}
-    if lhs.alignment != rhs.alignment {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
-}
-
-extension POGOProtos_Data_PokemonDisplay.Alignment: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "ALIGNMENT_UNSET"),
-    1: .same(proto: "SHADOW"),
-    2: .same(proto: "PURIFIED"),
-  ]
 }

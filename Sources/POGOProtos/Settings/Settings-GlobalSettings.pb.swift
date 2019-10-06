@@ -341,15 +341,6 @@ public struct POGOProtos_Settings_GlobalSettings {
   /// Clears the value of `evolutionV2Settings`. Subsequent reads from it will return its default value.
   public mutating func clearEvolutionV2Settings() {_uniqueStorage()._evolutionV2Settings = nil}
 
-  public var incidentSettings: POGOProtos_Settings_IncidentGlobalSettings {
-    get {return _storage._incidentSettings ?? POGOProtos_Settings_IncidentGlobalSettings()}
-    set {_uniqueStorage()._incidentSettings = newValue}
-  }
-  /// Returns true if `incidentSettings` has been explicitly set.
-  public var hasIncidentSettings: Bool {return _storage._incidentSettings != nil}
-  /// Clears the value of `incidentSettings`. Subsequent reads from it will return its default value.
-  public mutating func clearIncidentSettings() {_uniqueStorage()._incidentSettings = nil}
-
   public var koalaSettings: POGOProtos_Settings_KoalaSettings {
     get {return _storage._koalaSettings ?? POGOProtos_Settings_KoalaSettings()}
     set {_uniqueStorage()._koalaSettings = newValue}
@@ -358,15 +349,6 @@ public struct POGOProtos_Settings_GlobalSettings {
   public var hasKoalaSettings: Bool {return _storage._koalaSettings != nil}
   /// Clears the value of `koalaSettings`. Subsequent reads from it will return its default value.
   public mutating func clearKoalaSettings() {_uniqueStorage()._koalaSettings = nil}
-
-  public var kangarooSettings: POGOProtos_Settings_KangarooSettings {
-    get {return _storage._kangarooSettings ?? POGOProtos_Settings_KangarooSettings()}
-    set {_uniqueStorage()._kangarooSettings = newValue}
-  }
-  /// Returns true if `kangarooSettings` has been explicitly set.
-  public var hasKangarooSettings: Bool {return _storage._kangarooSettings != nil}
-  /// Clears the value of `kangarooSettings`. Subsequent reads from it will return its default value.
-  public mutating func clearKangarooSettings() {_uniqueStorage()._kangarooSettings = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -419,9 +401,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
     36: .standard(proto: "pokemon_settings"),
     37: .standard(proto: "avatar_settings"),
     38: .standard(proto: "evolution_v2_settings"),
-    39: .standard(proto: "incident_settings"),
     40: .standard(proto: "koala_settings"),
-    41: .standard(proto: "kangaroo_settings"),
   ]
 
   fileprivate class _StorageClass {
@@ -462,9 +442,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
     var _pokemonSettings: POGOProtos_Settings_PokemonGlobalSettings? = nil
     var _avatarSettings: POGOProtos_Settings_AvatarGlobalSettings? = nil
     var _evolutionV2Settings: POGOProtos_Settings_EvolutionV2Settings? = nil
-    var _incidentSettings: POGOProtos_Settings_IncidentGlobalSettings? = nil
     var _koalaSettings: POGOProtos_Settings_KoalaSettings? = nil
-    var _kangarooSettings: POGOProtos_Settings_KangarooSettings? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -508,9 +486,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
       _pokemonSettings = source._pokemonSettings
       _avatarSettings = source._avatarSettings
       _evolutionV2Settings = source._evolutionV2Settings
-      _incidentSettings = source._incidentSettings
       _koalaSettings = source._koalaSettings
-      _kangarooSettings = source._kangarooSettings
     }
   }
 
@@ -563,9 +539,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
         case 36: try decoder.decodeSingularMessageField(value: &_storage._pokemonSettings)
         case 37: try decoder.decodeSingularMessageField(value: &_storage._avatarSettings)
         case 38: try decoder.decodeSingularMessageField(value: &_storage._evolutionV2Settings)
-        case 39: try decoder.decodeSingularMessageField(value: &_storage._incidentSettings)
         case 40: try decoder.decodeSingularMessageField(value: &_storage._koalaSettings)
-        case 41: try decoder.decodeSingularMessageField(value: &_storage._kangarooSettings)
         default: break
         }
       }
@@ -685,14 +659,8 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
       if let v = _storage._evolutionV2Settings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 38)
       }
-      if let v = _storage._incidentSettings {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 39)
-      }
       if let v = _storage._koalaSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 40)
-      }
-      if let v = _storage._kangarooSettings {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 41)
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -740,9 +708,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
         if _storage._pokemonSettings != rhs_storage._pokemonSettings {return false}
         if _storage._avatarSettings != rhs_storage._avatarSettings {return false}
         if _storage._evolutionV2Settings != rhs_storage._evolutionV2Settings {return false}
-        if _storage._incidentSettings != rhs_storage._incidentSettings {return false}
         if _storage._koalaSettings != rhs_storage._koalaSettings {return false}
-        if _storage._kangarooSettings != rhs_storage._kangarooSettings {return false}
         return true
       }
       if !storagesAreEqual {return false}

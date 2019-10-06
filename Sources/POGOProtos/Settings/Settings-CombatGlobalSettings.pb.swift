@@ -50,8 +50,6 @@ public struct POGOProtos_Settings_CombatGlobalSettings {
 
   public var enableQuickSwapV2: Bool = false
 
-  public var enableParticleMinigame: Bool = false
-
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -77,7 +75,6 @@ extension POGOProtos_Settings_CombatGlobalSettings: SwiftProtobuf.Message, Swift
     11: .standard(proto: "enable_sockets"),
     12: .standard(proto: "enable_spin_minigame"),
     13: .standard(proto: "enable_quick_swap_v2"),
-    18: .standard(proto: "enable_particle_minigame"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -96,7 +93,6 @@ extension POGOProtos_Settings_CombatGlobalSettings: SwiftProtobuf.Message, Swift
       case 11: try decoder.decodeSingularBoolField(value: &self.enableSockets)
       case 12: try decoder.decodeSingularBoolField(value: &self.enableSpinMinigame)
       case 13: try decoder.decodeSingularBoolField(value: &self.enableQuickSwapV2)
-      case 18: try decoder.decodeSingularBoolField(value: &self.enableParticleMinigame)
       default: break
       }
     }
@@ -142,9 +138,6 @@ extension POGOProtos_Settings_CombatGlobalSettings: SwiftProtobuf.Message, Swift
     if self.enableQuickSwapV2 != false {
       try visitor.visitSingularBoolField(value: self.enableQuickSwapV2, fieldNumber: 13)
     }
-    if self.enableParticleMinigame != false {
-      try visitor.visitSingularBoolField(value: self.enableParticleMinigame, fieldNumber: 18)
-    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -162,7 +155,6 @@ extension POGOProtos_Settings_CombatGlobalSettings: SwiftProtobuf.Message, Swift
     if lhs.enableSockets != rhs.enableSockets {return false}
     if lhs.enableSpinMinigame != rhs.enableSpinMinigame {return false}
     if lhs.enableQuickSwapV2 != rhs.enableQuickSwapV2 {return false}
-    if lhs.enableParticleMinigame != rhs.enableParticleMinigame {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
