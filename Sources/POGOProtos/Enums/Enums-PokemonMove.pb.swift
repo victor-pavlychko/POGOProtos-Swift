@@ -290,6 +290,7 @@ public enum POGOProtos_Enums_PokemonMove: SwiftProtobuf.Enum {
   case hornDrill // = 328
   case fissure // = 329
   case auraSphere // = 332
+  case rockWrecker // = 334
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -567,6 +568,7 @@ public enum POGOProtos_Enums_PokemonMove: SwiftProtobuf.Enum {
     case 328: self = .hornDrill
     case 329: self = .fissure
     case 332: self = .auraSphere
+    case 334: self = .rockWrecker
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -842,6 +844,7 @@ public enum POGOProtos_Enums_PokemonMove: SwiftProtobuf.Enum {
     case .hornDrill: return 328
     case .fissure: return 329
     case .auraSphere: return 332
+    case .rockWrecker: return 334
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -1122,6 +1125,7 @@ extension POGOProtos_Enums_PokemonMove: CaseIterable {
     .hornDrill,
     .fissure,
     .auraSphere,
+    .rockWrecker,
   ]
 }
 
@@ -1400,5 +1404,6 @@ extension POGOProtos_Enums_PokemonMove: SwiftProtobuf._ProtoNameProviding {
     328: .same(proto: "HORN_DRILL"),
     329: .same(proto: "FISSURE"),
     332: .same(proto: "AURA_SPHERE"),
+    334: .same(proto: "ROCK_WRECKER"),
   ]
 }
