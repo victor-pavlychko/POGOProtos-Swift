@@ -3,5 +3,4 @@
 .swiftpm/
 Carthage/
 Package.resolved
-POGOProtos.xcodeproj/
 xcuserdata/
