@@ -14,7 +14,10 @@ do
     fulldir=$(dirname $file)
     dirname=$(basename $fulldir)
     dirname2=$(basename $(dirname $fulldir))
-    if [ "$dirname2" == "." ]
+    if [ "$dirname" == "." ]
+    then
+        dest="$fulldir/$filename"
+    elif [ "$dirname2" == "." ]
     then
         dest="$fulldir/$dirname-$filename"
     else
