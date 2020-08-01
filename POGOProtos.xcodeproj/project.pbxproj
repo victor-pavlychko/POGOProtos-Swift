@@ -1252,6 +1252,8 @@
 		5742390F24D5E68C00729D89 /* Requests-Vasa-VasaClientAction.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5742343124D5E68500729D89 /* Requests-Vasa-VasaClientAction.pb.swift */; };
 		5742391024D5E68C00729D89 /* Networking-Envelopes-AuthInfo.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5742343324D5E68500729D89 /* Networking-Envelopes-AuthInfo.pb.swift */; };
 		5742391124D5E68C00729D89 /* Networking-Envelopes-AuthTicket.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5742343424D5E68500729D89 /* Networking-Envelopes-AuthTicket.pb.swift */; };
+		5742391524D5EE3F00729D89 /* Tools-AssetDigestDecoderTool.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5742391324D5EE3F00729D89 /* Tools-AssetDigestDecoderTool.pb.swift */; };
+		5742391624D5EE3F00729D89 /* Tools-GameMasterDecoderTool.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5742391424D5EE3F00729D89 /* Tools-GameMasterDecoderTool.pb.swift */; };
 		57D433E12325926300483DD6 /* SwiftProtobuf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D433E02325926300483DD6 /* SwiftProtobuf.framework */; };
 /* End PBXBuildFile section */
 
@@ -2501,6 +2503,8 @@
 		5742343124D5E68500729D89 /* Requests-Vasa-VasaClientAction.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Requests-Vasa-VasaClientAction.pb.swift"; sourceTree = "<group>"; };
 		5742343324D5E68500729D89 /* Networking-Envelopes-AuthInfo.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Networking-Envelopes-AuthInfo.pb.swift"; sourceTree = "<group>"; };
 		5742343424D5E68500729D89 /* Networking-Envelopes-AuthTicket.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Networking-Envelopes-AuthTicket.pb.swift"; sourceTree = "<group>"; };
+		5742391324D5EE3F00729D89 /* Tools-AssetDigestDecoderTool.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tools-AssetDigestDecoderTool.pb.swift"; sourceTree = "<group>"; };
+		5742391424D5EE3F00729D89 /* Tools-GameMasterDecoderTool.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tools-GameMasterDecoderTool.pb.swift"; sourceTree = "<group>"; };
 		57D433E02325926300483DD6 /* SwiftProtobuf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftProtobuf.framework; path = Carthage/Build/Mac/SwiftProtobuf.framework; sourceTree = "<group>"; };
 		57D5368B231DDD7A00A96819 /* POGOProtos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = POGOProtos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D5368F231DDD7A00A96819 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -4811,6 +4815,16 @@
 			path = Envelopes;
 			sourceTree = "<group>";
 		};
+		5742391224D5EE3F00729D89 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				5742391324D5EE3F00729D89 /* Tools-AssetDigestDecoderTool.pb.swift */,
+				5742391424D5EE3F00729D89 /* Tools-GameMasterDecoderTool.pb.swift */,
+			);
+			name = Tools;
+			path = Sources/POGOProtos/Tools;
+			sourceTree = SOURCE_ROOT;
+		};
 		57D433DF2325926200483DD6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -4839,6 +4853,7 @@
 		57D5368D231DDD7A00A96819 /* POGOProtos */ = {
 			isa = PBXGroup;
 			children = (
+				5742391224D5EE3F00729D89 /* Tools */,
 				57422F0824D5E67D00729D89 /* Data */,
 				574230FA24D5E68000729D89 /* Enums */,
 				57422ED524D5E67D00729D89 /* Inventory */,
@@ -5149,6 +5164,7 @@
 				5742370A24D5E68900729D89 /* GamePoi-Responses-GetAvailableSubmissionsResponse.pb.swift in Sources */,
 				574236A724D5E68800729D89 /* Networking-Responses-ClientUpgradeResponse.pb.swift in Sources */,
 				574236F124D5E68900729D89 /* Networking-Responses-InvasionCompleteDialogueResponse.pb.swift in Sources */,
+				5742391524D5EE3F00729D89 /* Tools-AssetDigestDecoderTool.pb.swift in Sources */,
 				5742344424D5E68600729D89 /* Inventory-Item-ItemAward.pb.swift in Sources */,
 				5742343F24D5E68600729D89 /* Inventory-InventoryItem.pb.swift in Sources */,
 				574237BF24D5E68A00729D89 /* Requests-Messages-CompleteQuestStampCardMessage.pb.swift in Sources */,
@@ -5666,6 +5682,7 @@
 				574234E724D5E68600729D89 /* Data-Logs-BelugaDailyTransferLogEntry.pb.swift in Sources */,
 				574238BD24D5E68C00729D89 /* GameIap-Requests-SetInGameCurrencyExchangeRateMessage.pb.swift in Sources */,
 				574234FC24D5E68600729D89 /* Data-SkuData.pb.swift in Sources */,
+				5742391624D5EE3F00729D89 /* Tools-GameMasterDecoderTool.pb.swift in Sources */,
 				5742358724D5E68700729D89 /* Data-Player-UserIssueWeatherReport.pb.swift in Sources */,
 				5742378024D5E68900729D89 /* Networking-Responses-GiftDetailsResponse.pb.swift in Sources */,
 				5742376F24D5E68900729D89 /* Networking-Responses-SetBuddyPokemonResponse.pb.swift in Sources */,
