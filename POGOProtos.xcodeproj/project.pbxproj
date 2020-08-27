@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		573A6CAE24F8538E00166599 /* Enums-PokemonEvolution.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573A6CAD24F8538D00166599 /* Enums-PokemonEvolution.pb.swift */; };
 		5742343524D5E68600729D89 /* Inventory-InventoryKey.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57422ED624D5E67D00729D89 /* Inventory-InventoryKey.pb.swift */; };
 		5742343624D5E68600729D89 /* Inventory-EggIncubatorType.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57422ED724D5E67D00729D89 /* Inventory-EggIncubatorType.pb.swift */; };
 		5742343724D5E68600729D89 /* Inventory-EggIncubator.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57422ED824D5E67D00729D89 /* Inventory-EggIncubator.pb.swift */; };
@@ -1258,6 +1259,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		573A6CAD24F8538D00166599 /* Enums-PokemonEvolution.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Enums-PokemonEvolution.pb.swift"; sourceTree = "<group>"; };
 		57422ED624D5E67D00729D89 /* Inventory-InventoryKey.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Inventory-InventoryKey.pb.swift"; sourceTree = "<group>"; };
 		57422ED724D5E67D00729D89 /* Inventory-EggIncubatorType.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Inventory-EggIncubatorType.pb.swift"; sourceTree = "<group>"; };
 		57422ED824D5E67D00729D89 /* Inventory-EggIncubator.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Inventory-EggIncubator.pb.swift"; sourceTree = "<group>"; };
@@ -3417,6 +3419,7 @@
 		574230FA24D5E68000729D89 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
+				573A6CAD24F8538D00166599 /* Enums-PokemonEvolution.pb.swift */,
 				574230FB24D5E68000729D89 /* Enums-CameraType.pb.swift */,
 				574230FC24D5E68000729D89 /* Enums-PokemonCreateContext.pb.swift */,
 				574230FD24D5E68000729D89 /* Enums-WeatherCondition.pb.swift */,
@@ -5083,6 +5086,7 @@
 				5742381124D5E68A00729D89 /* Requests-Messages-RegisterBackgroundDeviceMessage.pb.swift in Sources */,
 				5742381D24D5E68A00729D89 /* Requests-Messages-GetPlayerProfileMessage.pb.swift in Sources */,
 				5742382824D5E68B00729D89 /* Requests-Messages-PetBuddyMessage.pb.swift in Sources */,
+				573A6CAE24F8538E00166599 /* Enums-PokemonEvolution.pb.swift in Sources */,
 				574236A924D5E68800729D89 /* Networking-Responses-StartTutorialActionResponse.pb.swift in Sources */,
 				5742374224D5E68900729D89 /* Social-Responses-UpdateNotificationResponse.pb.swift in Sources */,
 				5742351B24D5E68600729D89 /* Data-Telemetry-DeviceOSTelemetry.pb.swift in Sources */,

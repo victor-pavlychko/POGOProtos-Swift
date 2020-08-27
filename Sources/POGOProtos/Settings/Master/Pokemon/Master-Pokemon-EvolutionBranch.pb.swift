@@ -48,6 +48,12 @@ public struct POGOProtos_Settings_Master_Pokemon_EvolutionBranch {
 
   public var noCandyCostViaTrade: Bool = false
 
+  public var pokemonEvolution: POGOProtos_Enums_PokemonEvolution = .evolutionUnset
+
+  public var megaEnergyCost: Int32 = 0
+
+  public var unknown: Int32 = 0
+
   public var questRequirementTemplateID: [String] = []
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -74,6 +80,9 @@ extension POGOProtos_Settings_Master_Pokemon_EvolutionBranch: SwiftProtobuf.Mess
     11: .standard(proto: "only_nighttime"),
     12: .same(proto: "priority"),
     13: .standard(proto: "no_candy_cost_via_trade"),
+    14: .standard(proto: "pokemon_evolution"),
+    15: .standard(proto: "mega_energy_cost"),
+    16: .same(proto: "unknown"),
     17: .standard(proto: "quest_requirement_template_id"),
   ]
 
@@ -92,6 +101,9 @@ extension POGOProtos_Settings_Master_Pokemon_EvolutionBranch: SwiftProtobuf.Mess
       case 11: try decoder.decodeSingularBoolField(value: &self.onlyNighttime)
       case 12: try decoder.decodeSingularInt32Field(value: &self.priority)
       case 13: try decoder.decodeSingularBoolField(value: &self.noCandyCostViaTrade)
+      case 14: try decoder.decodeSingularEnumField(value: &self.pokemonEvolution)
+      case 15: try decoder.decodeSingularInt32Field(value: &self.megaEnergyCost)
+      case 16: try decoder.decodeSingularInt32Field(value: &self.unknown)
       case 17: try decoder.decodeRepeatedStringField(value: &self.questRequirementTemplateID)
       default: break
       }
@@ -135,6 +147,15 @@ extension POGOProtos_Settings_Master_Pokemon_EvolutionBranch: SwiftProtobuf.Mess
     if self.noCandyCostViaTrade != false {
       try visitor.visitSingularBoolField(value: self.noCandyCostViaTrade, fieldNumber: 13)
     }
+    if self.pokemonEvolution != .evolutionUnset {
+      try visitor.visitSingularEnumField(value: self.pokemonEvolution, fieldNumber: 14)
+    }
+    if self.megaEnergyCost != 0 {
+      try visitor.visitSingularInt32Field(value: self.megaEnergyCost, fieldNumber: 15)
+    }
+    if self.unknown != 0 {
+      try visitor.visitSingularInt32Field(value: self.unknown, fieldNumber: 16)
+    }
     if !self.questRequirementTemplateID.isEmpty {
       try visitor.visitRepeatedStringField(value: self.questRequirementTemplateID, fieldNumber: 17)
     }
@@ -154,6 +175,9 @@ extension POGOProtos_Settings_Master_Pokemon_EvolutionBranch: SwiftProtobuf.Mess
     if lhs.onlyNighttime != rhs.onlyNighttime {return false}
     if lhs.priority != rhs.priority {return false}
     if lhs.noCandyCostViaTrade != rhs.noCandyCostViaTrade {return false}
+    if lhs.pokemonEvolution != rhs.pokemonEvolution {return false}
+    if lhs.megaEnergyCost != rhs.megaEnergyCost {return false}
+    if lhs.unknown != rhs.unknown {return false}
     if lhs.questRequirementTemplateID != rhs.questRequirementTemplateID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
