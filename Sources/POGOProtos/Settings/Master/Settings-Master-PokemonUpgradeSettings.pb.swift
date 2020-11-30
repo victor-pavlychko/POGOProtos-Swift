@@ -44,6 +44,10 @@ public struct POGOProtos_Settings_Master_PokemonUpgradeSettings {
 
   public var defaultCpBoostAdditionalLevel: Int32 = 0
 
+  public var unknown11: Int32 = 0
+
+  public var unknown12: [Int32] = []
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -66,6 +70,8 @@ extension POGOProtos_Settings_Master_PokemonUpgradeSettings: SwiftProtobuf.Messa
     8: .standard(proto: "purified_candy_multiplier"),
     9: .standard(proto: "max_normal_upgrade_level"),
     10: .standard(proto: "default_cp_boost_additional_level"),
+    11: .same(proto: "unknown11"),
+    12: .same(proto: "unknown12"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -81,6 +87,8 @@ extension POGOProtos_Settings_Master_PokemonUpgradeSettings: SwiftProtobuf.Messa
       case 8: try decoder.decodeSingularFloatField(value: &self.purifiedCandyMultiplier)
       case 9: try decoder.decodeSingularInt32Field(value: &self.maxNormalUpgradeLevel)
       case 10: try decoder.decodeSingularInt32Field(value: &self.defaultCpBoostAdditionalLevel)
+      case 11: try decoder.decodeSingularInt32Field(value: &self.unknown11)
+      case 12: try decoder.decodeRepeatedInt32Field(value: &self.unknown12)
       default: break
       }
     }
@@ -117,6 +125,12 @@ extension POGOProtos_Settings_Master_PokemonUpgradeSettings: SwiftProtobuf.Messa
     if self.defaultCpBoostAdditionalLevel != 0 {
       try visitor.visitSingularInt32Field(value: self.defaultCpBoostAdditionalLevel, fieldNumber: 10)
     }
+    if self.unknown11 != 0 {
+      try visitor.visitSingularInt32Field(value: self.unknown11, fieldNumber: 11)
+    }
+    if !self.unknown12.isEmpty {
+      try visitor.visitPackedInt32Field(value: self.unknown12, fieldNumber: 12)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -131,6 +145,8 @@ extension POGOProtos_Settings_Master_PokemonUpgradeSettings: SwiftProtobuf.Messa
     if lhs.purifiedCandyMultiplier != rhs.purifiedCandyMultiplier {return false}
     if lhs.maxNormalUpgradeLevel != rhs.maxNormalUpgradeLevel {return false}
     if lhs.defaultCpBoostAdditionalLevel != rhs.defaultCpBoostAdditionalLevel {return false}
+    if lhs.unknown11 != rhs.unknown11 {return false}
+    if lhs.unknown12 != rhs.unknown12 {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
