@@ -745,6 +745,7 @@ public enum POGOProtos_Enums_PokemonId: SwiftProtobuf.Enum {
   case obstagoon // = 862
   case perrserker // = 863
   case sirfetchd // = 865
+  case mrRime // = 866
   case runerigus // = 867
   case UNRECOGNIZED(Int)
 
@@ -1478,6 +1479,7 @@ public enum POGOProtos_Enums_PokemonId: SwiftProtobuf.Enum {
     case 862: self = .obstagoon
     case 863: self = .perrserker
     case 865: self = .sirfetchd
+    case 866: self = .mrRime
     case 867: self = .runerigus
     default: self = .UNRECOGNIZED(rawValue)
     }
@@ -2212,6 +2214,7 @@ public enum POGOProtos_Enums_PokemonId: SwiftProtobuf.Enum {
     case .obstagoon: return 862
     case .perrserker: return 863
     case .sirfetchd: return 865
+    case .mrRime: return 866
     case .runerigus: return 867
     case .UNRECOGNIZED(let i): return i
     default: break
@@ -2953,6 +2956,7 @@ extension POGOProtos_Enums_PokemonId: CaseIterable {
     .obstagoon,
     .perrserker,
     .sirfetchd,
+    .mrRime,
     .runerigus,
   ]
 }
@@ -3687,6 +3691,7 @@ extension POGOProtos_Enums_PokemonId: SwiftProtobuf._ProtoNameProviding {
     862: .same(proto: "OBSTAGOON"),
     863: .same(proto: "PERRSERKER"),
     865: .same(proto: "SIRFETCHD"),
+    866: .same(proto: "MR_RIME"),
     867: .same(proto: "RUNERIGUS"),
   ]
 }
