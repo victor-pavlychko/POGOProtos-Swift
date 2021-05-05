@@ -387,6 +387,7 @@ public enum POGOProtos_Enums_PokemonFamilyId: SwiftProtobuf.Enum {
   case familyNoibat // = 714
   case familyXerneas // = 716
   case familyYveltal // = 717
+  case familyZygarde // = 718
   case familyMeltan // = 808
   case UNRECOGNIZED(Int)
 
@@ -762,6 +763,7 @@ public enum POGOProtos_Enums_PokemonFamilyId: SwiftProtobuf.Enum {
     case 714: self = .familyNoibat
     case 716: self = .familyXerneas
     case 717: self = .familyYveltal
+    case 718: self = .familyZygarde
     case 808: self = .familyMeltan
     default: self = .UNRECOGNIZED(rawValue)
     }
@@ -1135,6 +1137,7 @@ public enum POGOProtos_Enums_PokemonFamilyId: SwiftProtobuf.Enum {
     case .familyNoibat: return 714
     case .familyXerneas: return 716
     case .familyYveltal: return 717
+    case .familyZygarde: return 718
     case .familyMeltan: return 808
     case .UNRECOGNIZED(let i): return i
     }
@@ -1513,6 +1516,7 @@ extension POGOProtos_Enums_PokemonFamilyId: CaseIterable {
     .familyNoibat,
     .familyXerneas,
     .familyYveltal,
+    .familyZygarde,
     .familyMeltan,
   ]
 }
@@ -1889,6 +1893,7 @@ extension POGOProtos_Enums_PokemonFamilyId: SwiftProtobuf._ProtoNameProviding {
     714: .same(proto: "FAMILY_NOIBAT"),
     716: .same(proto: "FAMILY_XERNEAS"),
     717: .same(proto: "FAMILY_YVELTAL"),
+    718: .same(proto: "FAMILY_ZYGARDE"),
     808: .same(proto: "FAMILY_MELTAN"),
   ]
 }
